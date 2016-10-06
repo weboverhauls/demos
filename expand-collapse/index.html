@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Expand-Collapse Example</title>
+	<meta name="description" content="Example of an accessible expand-collapse widget with progressive enhancement." />
+	<meta name="author" content="PayPal, Dennis Lembree" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+#container {
+	width: 12rem;
+}
+#bar {
+	display: block;
+	padding: .5rem;
+	border: 1px #ccc solid;
+}
+#bar[role=button]{
+	text-decoration: none;
+	border-radius: 5px;
+}
+#bar[aria-expanded=true] {
+	border: 1px #f00 solid;
+}
+#foo {
+	padding: .5rem;
+	overflow: hidden;
+	background-color: #efefef;
+	border: 1px #ccc solid;
+}
+#foo.hidden {
+	display: none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Expand-Collapse Code Example</h1>
+
+<p>Example of an expand-collapse widget with progressive enhancement.</p>
+
+<p>Filler text. Lorem ipsum dolor sit amet. <a href="#">Lorem</a> ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+
+<div id="container">
+	<a id="bar" href="#foo">Toggle</a>
+	<div id="foo" aria-labelledby="bar">Lorem ipsum dolor sit amet. <a href="#">Lorem</a> ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+</div>
+
+<p>More filler text. Lorem ipsum dolor sit amet. <a href="#">Lorem</a> ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script>
+// add ARIA attributes since with JS it acts like button not hyperlink
+$("#bar")
+	.attr("role","button")
+	.attr("aria-controls","foo");
+
+// default state is closed
+$("#bar").attr("aria-expanded", "false");
+$("#foo").addClass("hidden");
+
+// call interaction on native click
+$("#bar").click(function(e) {
+	e.preventDefault();
+	showHide();
+});
+
+// call interaction on spacebar
+$("#bar").keydown(function(e) {
+    if (e.keyCode == 32) {
+		showHide();
+    }
+});
+
+// the interaction
+function showHide() {
+	if ($("#foo").hasClass('hidden')) {
+		// If hidden, then show it
+		$("#foo").removeClass("hidden");
+		$("#bar").attr('aria-expanded', 'true');
+	}
+	else {
+		// If showing, then hide it
+		$("#foo").addClass("hidden");
+		$("#bar").attr('aria-expanded', 'false');
+	}
+}
+</script>
+
+</body>
+</html>

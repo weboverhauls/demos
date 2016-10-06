@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CSS3 Show-Hide with Transition</title>
+	<meta name="author" content="Dennis Lembree" />
+
+<style>
+#foo {
+	height: 50px;
+	padding: 10px;
+	overflow: hidden;
+	background-color: #eee;
+	transition: 0.5s height, 0.5s padding;
+}
+#foo.hidden {
+	height: 0;
+	padding: 0 10px;
+	visibility: hidden;
+	transition:0.5s height, 0.5s padding, 0s visibility 0.5s;
+}
+#bar[role=button]{
+	display: inline-block;
+	margin: .5em 0;
+	padding: .5em;
+	text-decoration: none;
+	border: 1px #ccc solid;
+	border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Example of accessible show/hide using CSS Transition (and progressive enhancement)</h1>
+
+<div><a id="bar" href="#foo">Star Wars ipsum</a></div>
+<div id="foo">Boba yoda wicket gamorrean ponda sebulba. Secura kit skywalker ackbar hutt darth owen. Boba leia antilles kenobi antilles amidala luuke biggs qui-gon. Darth calrissian lando moff mustafar ewok sidious. Obi-wan amidala darth yoda qui-gon solo boba jade antilles. Kenobi hutt twi'lek mara grievous coruscant boba. Dagobah dantooine kit skywalker watto mon. Gamorrean skywalker lars skywalker dooku mothma yoda.</div>
+
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+// add ARIA attributes
+$("#bar")
+	.attr("role","button")
+	.attr("aria-controls","foo")
+	.attr("aria-expanded","true");
+
+// call interaction on native click
+$("#bar").click(function(e) {
+	e.preventDefault();
+	showHide();
+});
+
+// call interaction on spacebar
+$("#bar").keydown(function(e) {
+    if (e.keyCode == 32) {
+		showHide();
+    }
+});
+
+// do interaction
+//$(".bar").click(function(e) {
+function showHide() {	
+	if ($("#foo").hasClass('hidden')) {
+		// If hidden, then show it
+		$("#foo").removeClass("hidden");
+		$("#bar").attr('aria-expanded', 'true');
+	}
+	else {
+		// If showing, then hide it
+		$("#foo").addClass("hidden");
+		$("#bar").attr('aria-expanded', 'false');
+	}	
+}
+</script>
+
+</body>
+</html>

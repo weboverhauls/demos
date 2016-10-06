@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8" />
+	<title>Grid Example</title>
+	<meta name="description" content="Coding example for grid-like layout with linked row and menu button, with progressive enhancement." />
+	<meta name="author" content="Dennis Lembree, PayPal Engineering" />
+	<link href="include/menuButton.css" rel="stylesheet" type="text/css" />
+	<link href="include/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<script>
+	document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<h1>Grid Example</h1>
+
+<p>Accessible grid layout with dropdown buttons and linked rows. Implemented with progressive enhancement.</p>
+
+<h2 class="gridCaption">My Transactions</h2>
+
+<div>
+	<div class="tableRow">
+		<h3 class="accessAid" id="hdRec1">Record 1</h3>
+		<div class="tableRowInner">
+			<a href="#1" aria-describedby="hdRec1">
+				<span class="tableColumn date">May 6, 2013</span>
+				<span class="tableColumn desc">Payment from Joe Schmoe &amp; Co.</span>
+				<span class="tableColumn price">$73.02 USD</span>
+			</a>
+		</div>
+		<div class="dropdownMenuAlt">
+			<a href="#ddMenuList1" id="ddMenu1" class="menuButton">Options 1</a>
+			<div aria-labelledby="ddMenu1">
+				<div id="ddMenuList1">
+					<ul>
+						<li><a href="#">View Details</a></li>
+						<li><a href="#">Duplicate</a></li>
+						<li><a href="#">Archive</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tableRow">
+		<h3 class="accessAid" id="hdRec2">Record 2</h3>
+		<div class="tableRowInner">
+			<a href="#2" aria-describedby="hdRec2">
+				<span class="tableColumn date">May 4, 2013</span>
+				<span class="tableColumn desc">Payment from Mike Johnson Enterprises, Inc.</span>
+				<span class="tableColumn price">$10.00 USD</span>
+			</a>
+		</div>
+		<div class="dropdownMenuAlt">
+			<a href="#ddMenuList2" id="ddMenu2" class="menuButton">Options 2</a>
+			<div aria-labelledby="ddMenu2">
+				<div id="ddMenuList2">
+					<ul>
+						<li><a href="#">View Details</a></li>
+						<li><a href="#">Duplicate</a></li>
+						<li><a href="#">Archive</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tableRow">
+		<h3 class="accessAid" id="hdRec3">Record 3</h3>
+		<div class="tableRowInner">
+			<a href="#3" aria-describedby="hdRec3">
+				<span class="tableColumn date">May 3, 2013</span>
+				<span class="tableColumn desc">Payment from Jane Doe</span>
+				<span class="tableColumn price">$23.00 USD</span>
+			</a>
+		</div>
+		<div class="dropdownMenuAlt">
+			<a href="#ddMenuList3" id="ddMenu3" class="menuButton">Options 3</a>
+			<div aria-labelledby="ddMenu3">
+				<div id="ddMenuList3">
+					<ul>
+						<li><a href="#">View Details</a></li>
+						<li><a href="#">Duplicate</a></li>
+						<li><a href="#">Archive</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<p style="clear:left;">From the article <a href="https://www.paypal-engineering.com/2013/05/14/interactive-elements-within-a-grid-layout/">Interactive elements within a grid layout</a> by Dennis Lembree, PayPal Engineering.</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="include/jquery-ui-1.8.22.core.min.js"></script>
+<script src="include/dropdownMenuAlt.js"></script>
+<script>
+$(document).ready(function() {
+	//$('html').removeClass('no-js').addClass('js');
+	$('.dropdownMenuAlt').dropdownMenuAlt();
+});
+</script>
+
+</body>
+</html>

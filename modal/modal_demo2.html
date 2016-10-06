@@ -1,0 +1,194 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Modal Dialog Example 2</title>
+	<meta name="description" content="Demonstration of an accessible modal dialog with progressive enhancement." />
+	<meta name="keywords" content="demo, dialog, modal, accessibility, a11y, example" />
+	<meta name="author" content="Dennis Lembree" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+	margin: 1.75rem 0;
+}
+#mask {
+	position: absolute;
+	z-index: 100;
+	background-color: #666;
+	display: none;
+	top: 0;
+	left: 0;
+	opacity: 0.8;
+}
+.modal {
+	position: fixed;
+	width: 60%;
+	max-width: 650px;
+	min-width: 250px;
+	z-index: 101;
+	padding: 25px;
+	background-color: #efefef;
+	border-radius: 5px;
+}
+.openModal[role=button]{
+	border: 1px #999 solid;
+	padding: 10px;
+	text-decoration: none;
+	border-radius: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<h1>Modal Dialog Example 2</h1>
+
+	<p>Example of an accessible modal with resizing and progressive enhancement.</p>
+	
+	<p><a href="#search" class="openModal">Go To Search</a></p>
+	
+	<p>Filler text. Ipsum <a href="#">test</a> lorem.</p>
+	
+	<div id="search" class="modal" aria-label="Search">
+		<form id="frmSearch" action="/search" method="post">
+			<label for="query">Enter search terms:</label>
+			<input name="query" id="query" type="text" size="35" />
+			<button type="submit">Search</button>
+		</form>
+		<div><button class="close">Close</button></div>
+	</div>
+	<div id="mask"></div>
+
+	<h2>More</h2>
+	<p><a href="modal_demo.html">original modal demo</a></p>
+
+</div>
+
+<!-- jQuery hosted by Google --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> 
+
+<script>
+
+/* ****************************
+	MODAL LIGHTBOX
+**************************** */
+
+// Initialize (these roles can confuse AT user if JS not running)
+$(".openModal").attr("role","button");
+$(".modal").attr("role","dialog");
+$(".modal").css("display","none");
+
+// Function to resize and reposition the modal window
+function resizeModal(id) {
+	// Get the window height and width
+	var winH = $(window).height();
+	var winW = $(window).width();
+
+	// Position the modal window to center
+	$(id).css('top',  winH/2-$(id).height()/2-50);
+	$(id).css('left', winW/2-$(id).width()/2-20);	
+}
+
+// Function to resize mask (grey background)
+function resizeMask() {
+	// Get the screen height and width
+	var maskHeight = $(document).height();
+	var maskWidth = $(window).width();
+
+	// Set height and width to mask to fill up the whole screen
+	$('#mask').css('width',maskWidth);
+	$('#mask').css('height',maskHeight);
+}
+
+// Opening modal
+$('a[class=openModal]').click(function(e) {
+	e.preventDefault();
+
+	// Remember what opened me to focus when closing
+	var lastFocus = $(this);
+
+	// Set size of mask to size of screen
+	resizeMask();
+	
+	// Set size and position modal
+	resizeModal('.modal');
+
+	// Transition effect
+	$('#mask').fadeIn(300);
+	$('#search').fadeIn(300);
+	
+	// Focus the first input
+	$('#query').focus();
+
+	// Close it
+	closeIt = function() {
+		$('#mask, .modal').hide();
+		lastFocus.focus();
+	}
+
+	// Close - if close button is clicked
+	$('#search .close').click(function (e) {
+		e.preventDefault();
+		closeIt();
+	});
+
+	// Close - Escape key
+	$('#search').on('keydown', function (e) {
+	    if (e.keyCode === 27) { // ESC
+			closeIt();
+	    }
+	});
+
+	// Close - if mask is clicked
+	$('#mask').click(function () {
+		closeIt();
+	});
+});
+
+// Call interaction on spacebar
+$('a[class=openModal]').on('keydown', function(e) {
+    if (e.keyCode == 32) { // Spacebar
+    	e.preventDefault();
+		$('a[class=openModal]').click();
+    }
+});
+
+// Resize modal when window resized
+$(window).resize(function () {
+	var id = $('.modal');
+
+	// Resize the mask
+	resizeMask();
+
+	// Call function to resize and reposition modal
+	resizeModal(id);
+});
+
+// Maintain focus within modal
+$("#search").on('keydown', function (e) {
+    var which = e.which;
+    var target = e.target;
+	var $query = $('#query');
+	var $close = $('button.close');
+
+    if (which === 9 && e.shiftKey) { // SHIFT + TAB
+        // shift+tab from "X" (close) button to the "Cancel" button
+        if (target === $query[0]) {
+            e.preventDefault();
+            $close.focus();
+        }
+    } else if (which === 9) { // TAB
+        // tab from "Cancel" button to "X" (close) button
+        if (target === $close[0]) {
+            e.preventDefault();
+            $query.focus();
+        }
+    }
+});
+</script>
+
+</body>
+</html>

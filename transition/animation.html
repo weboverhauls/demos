@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Accessibility test for CSS3 Animation to Show/Hide</title>
+	<meta name="author" content="Dennis Lembree" />
+<style>
+/* keyframes - show */
+@keyframes show {
+	from {
+		max-height: 0;
+	}
+	to {
+		max-height: 5em;
+	}
+}
+@-moz-keyframes show {
+	from {
+		max-height: 0;
+	}
+	to {
+		max-height: 5em;
+	}
+}
+@-webkit-keyframes show {
+	0% {
+		max-height: 0;
+	}
+	100% {
+		max-height: 5em;
+	}
+}
+@-ms-keyframes show {
+	0% {
+		max-height: 0;
+	}
+	100% {
+		max-height: 5em;
+	}
+}
+@-o-keyframes show {
+	0% {
+		max-height: 0;
+	}
+	100% {
+		max-height: 5em;
+	}
+}
+
+/* keyframes - hide */
+@keyframes hide {
+	from {
+		max-height: 5em;
+	}
+	to {
+		max-height: 0;
+	}
+}
+@-moz-keyframes hide {
+	from {
+		max-height: 5em;
+	}
+	to {
+		max-height: 0;
+	}
+}
+@-webkit-keyframes hide {
+	0% {
+		max-height: 5em;
+	}
+	100% {
+		max-height: 0;
+	}
+}
+@-ms-keyframes hide {
+	0% {
+		max-height: 5em;
+	}
+	100% {
+		max-height: 0;
+	}
+}
+@-o-keyframes hide {
+	0% {
+		max-height: 5em;
+	}
+	100% {
+		max-height: 0;
+	}
+}
+
+#foo {
+	max-height: 0;
+	overflow: hidden;
+	width: 30em;
+
+	-webkit-animation:hide .5s; /* Safari & Chrome */
+	-moz-animation:hide .5s; /* Firefox */
+	-ms-animation:hide .5s; /* IE10 */
+	-o-animation:hide .5s; /* Opera */
+	animation:hide .5s;
+}
+#foo.displayed {
+	max-height: 5em;
+	display: block;
+
+	-webkit-animation:show .5s; /* Safari & Chrome */
+	-moz-animation:show .5s; /* Firefox */
+	-ms-animation:show .5s; /* IE10 */
+	-o-animation:show .5s; /* Opera */
+	animation:show .5s;
+}
+</style>
+</head>
+
+<body>
+
+<div><a class="bar" href="#foo" aria-controls="foo" aria-expanded="true">Toggle</a></div>
+<div id="foo" class="displayed">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </div>
+
+<script src="jquery-1.7.2.min.js"></script>
+<script>
+(function(){
+
+	// Add ARIA roles
+	$('a.bar').attr('role', 'button');
+	
+	// Click handler and functionality
+	$("a").click(function(e) {
+		
+		e.preventDefault();
+		$('#foo').removeAttr('style');
+		
+		if ($("#foo").hasClass('displayed')) {
+			// If showing, then hide it
+			$("#foo").removeClass("displayed");
+			$('a.bar').attr('aria-expanded', 'false');
+		}
+		else {
+			// If hidden, then show it
+			$("#foo").addClass("displayed");
+			$('a.bar').attr('aria-expanded', 'true');
+		}
+	});
+
+	// Hide completely when animation done and not displayed
+	$("#foo").bind("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+		if (!$("#foo").hasClass("displayed")) {
+			$('#foo').css("display","none");
+		}
+	});
+	
+})();
+</script>
+
+</body>
+</html>

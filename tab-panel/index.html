@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Tab Panel Example</title>
+     <meta name="description" content="Example of a semantic and accessible tab panel widget." />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+/* demo layout */
+#wrapper {
+	width: 90%;
+	max-width: 50rem;
+}
+.tabpanels > div {
+	height: 10rem;
+	overflow: auto;
+}
+/* utility */
+[aria-hidden="true"] {
+	display: none;
+}
+/* tab panel stuff */
+ul[role="tablist"] {
+	list-type:none;
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+ul[role="tablist"] li {
+	float: left;
+	position: relative;
+	top: 1px;
+	margin: 0 5px 0 0;
+	padding: 8px 12px;
+	list-style-type: none;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 10px 10px 0 0;
+	border-bottom: none;
+}
+ul[role="tablist"] a {
+	text-decoration: none;
+	padding: 4px;
+}
+.tabwidget .tabpanels {
+	z-index: 99;
+	clear: both;
+	background: #fff;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+}
+ul[role="tablist"] a[aria-selected="true"] {
+	font-weight: bold;
+}
+
+/* tooltip */
+.tabwidget li {
+	position: relative;
+}
+[role="tooltip"] {
+	font-size: .9rem;
+	display: none;
+	position: absolute;
+	top: -2.5rem;
+	padding: .5rem;
+	margin: 0;
+	color: #fff;
+	background: #666;
+	width: 17rem;
+	border-radius: .25rem;
+	z-index: 1;
+}
+@keyframes fade-out {
+	0% { opacity: 1;}
+	100% {; opacity: 0;}
+}
+a:focus + [role="tooltip"] {
+	display: block;
+
+    animation: fade-out 1s ease-in;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 2.5s;
+    opacity: 1;
+}
+
+/* keyboard character */
+kbd {
+    padding: .1rem .4rem;
+    border: 1px solid #ccc;
+    font-family: Arial,Helvetica,sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 0 .1rem;
+    text-shadow: 0 1px 0 #fff;
+    white-space: nowrap;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<h1>Tab Panel Example</h1>
+
+<p>Example of an <a href="https://www.w3.org/TR/wai-aria-practices/#tabpanel">accessible tab panel widget</a> with ARIA and progressive enhancement. The second example adds instructions and an experimental tooltip (to help with keyboard discoverability) and ability for panels to focus (test the Marilyn Manson tabpanel with keyboard).</p>
+
+<h2>Default</h2>
+<div class="tabwidget" id="tabmusic">
+	<ul>
+		<li>
+			<a href="#panel1" aria-describedby="tab-tip">The Cure</a>
+		</li>
+		<li>
+			<a href="#panel2">Beastie Boys</a>
+		</li>
+		<li>
+			<a href="#panel3">Marilyn Manson</a>
+		</li>
+	</ul>
+
+	<div class="tabpanels">
+		<div id="panel1">
+			<h3>The Cure</h3>
+			<p><a href="https://en.wikipedia.org/wiki/The_Cure">The Cure</a> are an English rock band formed in Crawley, West Sussex, in 1976. The band has experienced several line-up changes, with vocalist, guitarist and principal songwriter Robert Smith being the only constant member. The Cure first began releasing music in the late 1970s with their debut album Three Imaginary Boys; this, along with several early singles, placed the band as part of the post-punk and new wave movements that had sprung up in the wake of the punk rock revolution in the United Kingdom. During the early 1980s, the band's increasingly dark and tormented music was a staple of the emerging gothic rock genre.</p>
+			<p>After the release of 1982's Pornography, the band's future was uncertain and Smith was keen to move past the gloomy reputation his band had acquired. With the single "Let's Go to Bed" released the same year, Smith began to place a pop sensibility into the band's music and their popularity increased as the decade wore on, with songs like "Just Like Heaven", "Lovesong" and "Friday I'm in Love". The band is estimated to have sold 27 million albums as of 2004 and have released thirteen studio albums, ten EPs and over thirty singles during their career.</p>
+		</div>
+		<div id="panel2">
+			<h3>Beastie Boys</h3>
+			<p><a href="https://en.wikipedia.org/wiki/Beastie_Boys">The Beastie Boys</a> were an American hip hop/rock band from New York City, formed in 1981. For the majority of its career, the group consisted of Michael "Mike D" Diamond (vocals, drums), Adam "MCA" Yauch (vocals, bass) and Adam "Ad-Rock" Horovitz (vocals, guitar).</p>
+			<p>With seven platinum or better albums from 1986–2004, the Beastie Boys were one of the longest-lived hip hop acts worldwide. In 2009, the group released digitally remastered deluxe editions of their albums Paul's Boutique, Check Your Head, Ill Communication and Hello Nasty. They were inducted into the Rock and Roll Hall of Fame in April 2012, "just the third rap group to enter the Hall, after Run–D.M.C. (2009) and Grandmaster Flash and the Furious Five (2007)." The following month, MCA died of cancer of the parotid salivary gland.</p>
+		</div>
+		<div id="panel3">
+			<h3>Marilyn Manson</h3>
+			<p>Brian Hugh Warner (born January 5, 1969), known professionally as Marilyn Manson, is an American musician, songwriter, actor, painter, multimedia artist, and former music journalist. He is known for his controversial stage personality and image as the lead singer of the band Marilyn Manson, which he co-founded with Daisy Berkowitz and of which he remains the only constant member. His stage name was formed by juxtaposing the names of two American cultural icons, actress Marilyn Monroe and murderer Charles Manson.</p>
+			<p>He is best known for his band's records released in the 1990s, most notably Antichrist Superstar and Mechanical Animals, which along with his public image earned him a reputation in the mainstream media as a controversial figure and an allegedly negative influence on young people.[6][7] In the U.S. alone, three of the band's albums have been awarded platinum and three more went gold, and the band has had eight releases debut in the top ten, including two number-one albums. Manson has been ranked number 44 in the Top 100 Heavy Metal Vocalists by Hit Parader, and has been nominated for four Grammy Awards.</p>
+		</div>
+	</div>
+</div>
+
+<h2>With instructions/tooltip and focusable panels</h2>
+<p>Use arrow keys to select. <kbd>&#8592;</kbd> <kbd>&#8594;</kbd> or <kbd>&#8593;</kbd> <kbd>&#8595;</kbd>.</p>
+<div class="tabwidget" id="tabmusic-wt">
+	<ul>
+		<li>
+			<a href="#panel1-wt" aria-describedby="tab-tip-wt">The Cure</a>
+			<div role="tooltip" id="tab-tip-wt">Use arrow keys, click or tap to select.</div>
+		</li>
+		<li>
+			<a href="#panel2-wt">Beastie Boys</a>
+		</li>
+		<li>
+			<a href="#panel3-wt">Marilyn Manson</a>
+		</li>
+	</ul>
+
+	<div class="tabpanels second">
+		<div id="panel1-wt" tabindex="0">
+			<h3>The Cure</h3>
+			<p><a href="https://en.wikipedia.org/wiki/The_Cure">The Cure</a> are an English rock band formed in Crawley, West Sussex, in 1976. The band has experienced several line-up changes, with vocalist, guitarist and principal songwriter Robert Smith being the only constant member. The Cure first began releasing music in the late 1970s with their debut album Three Imaginary Boys; this, along with several early singles, placed the band as part of the post-punk and new wave movements that had sprung up in the wake of the punk rock revolution in the United Kingdom. During the early 1980s, the band's increasingly dark and tormented music was a staple of the emerging gothic rock genre.</p>
+			<p>After the release of 1982's Pornography, the band's future was uncertain and Smith was keen to move past the gloomy reputation his band had acquired. With the single "Let's Go to Bed" released the same year, Smith began to place a pop sensibility into the band's music and their popularity increased as the decade wore on, with songs like "Just Like Heaven", "Lovesong" and "Friday I'm in Love". The band is estimated to have sold 27 million albums as of 2004 and have released thirteen studio albums, ten EPs and over thirty singles during their career.</p>
+		</div>
+		<div id="panel2-wt" tabindex="0">
+			<h3>Beastie Boys</h3>
+			<p><a href="https://en.wikipedia.org/wiki/Beastie_Boys">The Beastie Boys</a> were an American hip hop/rock band from New York City, formed in 1981. For the majority of its career, the group consisted of Michael "Mike D" Diamond (vocals, drums), Adam "MCA" Yauch (vocals, bass) and Adam "Ad-Rock" Horovitz (vocals, guitar).</p>
+			<p>With seven platinum or better albums from 1986–2004, the Beastie Boys were one of the longest-lived hip hop acts worldwide. In 2009, the group released digitally remastered deluxe editions of their albums Paul's Boutique, Check Your Head, Ill Communication and Hello Nasty. They were inducted into the Rock and Roll Hall of Fame in April 2012, "just the third rap group to enter the Hall, after Run–D.M.C. (2009) and Grandmaster Flash and the Furious Five (2007)." The following month, MCA died of cancer of the parotid salivary gland.</p>
+		</div>
+		<div id="panel3-wt" tabindex="0">
+			<h3>Marilyn Manson</h3>
+			<p>Brian Hugh Warner (born January 5, 1969), known professionally as Marilyn Manson, is an American musician, songwriter, actor, painter, multimedia artist, and former music journalist. He is known for his controversial stage personality and image as the lead singer of the band Marilyn Manson, which he co-founded with Daisy Berkowitz and of which he remains the only constant member. His stage name was formed by juxtaposing the names of two American cultural icons, actress Marilyn Monroe and murderer Charles Manson.</p>
+			<p>He is best known for his band's records released in the 1990s, most notably Antichrist Superstar and Mechanical Animals, which along with his public image earned him a reputation in the mainstream media as a controversial figure and an allegedly negative influence on young people.[6][7] In the U.S. alone, three of the band's albums have been awarded platinum and three more went gold, and the band has had eight releases debut in the top ten, including two number-one albums. Manson has been ranked number 44 in the Top 100 Heavy Metal Vocalists by Hit Parader, and has been nominated for four Grammy Awards.</p>
+		</div>
+	</div>
+</div>
+
+<p style="margin-bottom: 12rem;"><a href="https://en.wikipedia.org/wiki/Marilyn_Manson">Marilyn Manson</a> - link left out for testing.</p>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="tab-panel.js"></script>
+<script>
+$(function() {
+	//$('.tabwidget').tabs({ width:300 });
+	$('.tabwidget').tabs();
+});
+</script>
+
+</body>
+</html>

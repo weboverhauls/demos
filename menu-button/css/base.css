@@ -1,0 +1,30 @@
+
+body {
+margin:1em;
+}
+footer {
+margin:2em 0;
+}
+
+/* TYPOGRAPHY */
+h1{
+font-size:1.5em;
+padding:.75em 0;
+}
+h2{
+font-size:1.35em;
+padding:.75em 0;
+}
+h3{
+font-size:1.15em;
+margin:1em 0 0;
+}
+p, li{
+margin:.5em 0;
+}
+li{
+margin-left:1em;
+}
+fieldset{
+margin:1em .75em;
+}

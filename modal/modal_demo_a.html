@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Modal Dialog Example</title>
+	<meta name="description" content="Demonstration of an accessible modal dialog." />
+	<meta name="keywords" content="demo, dialog, modal, accessibility, a11y" />
+	<meta name="author" content="Dennis Lembree" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+#mask {
+	position: absolute;
+	z-index: 100;
+	background-color: #666;
+	display: none;
+	top: 0;
+	left: 0;
+
+	-moz-opacity: 0.8;
+	opacity: 0.8;
+}
+.modal {
+	position: fixed;
+	width: 60%;
+	max-width: 650px;
+	min-width: 250px;
+	z-index: 101;
+	padding: 25px;
+	background-color: #efefef;
+}
+</style>
+</head>
+
+<body>
+
+<!-- http://jsfiddle.net/weboverhauls/GPd5u/6/ -->
+
+<div id="wrapper">
+
+	<h1>Modal Dialog Example</h1>
+	
+	<p><a href="#search" class="openModal">Open Modal</a></p>
+	
+	<p>Ipsum <a href="#">test</a> lorem.</p>
+	
+	<div id="search" class="modal" aria-label="Search" tabindex="-1">
+		<form id="frmSearch" action="/search" method="post">
+			<label for="query">Enter search terms:</label>
+			<input name="query" id="query" type="text" size="35" />
+			<button type="submit">Search</button>
+		</form>
+		<div><button class="close">Close</button></div>
+	</div>
+	<div id="mask"></div>
+
+	<h2>More</h2>
+	<!--<p><a href="CSUN14-Modal-Dialog.ppt">related CSUN 14 powerpoint</a></p>-->
+	<p><a href="modal_demo2.html">modal demo 2</a></p>
+
+</div>
+
+<!-- jQuery hosted by Google --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> 
+
+<script>
+
+/* ****************************
+	MODAL LIGHTBOX
+**************************** */
+
+// Initialize (these roles can confuse AT user if JS not running)
+$(".openModal").attr("role","button");
+$(".modal").attr("role","dialog");
+$(".modal").hide();
+
+// Function to resize and reposition the modal window
+function resizeModal(id) {
+	// Get the window height and width
+	var winH = $(window).height();
+	var winW = $(window).width();
+
+	// Position the modal window to center
+	$(id).css('top',  winH/2-$(id).height()/2-50);
+	$(id).css('left', winW/2-$(id).width()/2-20);	
+}
+
+// Function to resize mask (grey background)
+function resizeMask() {
+	// Get the screen height and width
+	var maskHeight = $(document).height();
+	var maskWidth = $(window).width();
+
+	// Set height and width to mask to fill up the whole screen
+	$('#mask').css('width',maskWidth);
+	$('#mask').css('height',maskHeight);
+}
+
+$('a[class=openModal]').click(function(e) {
+	e.preventDefault();
+
+	// Get modal containers
+	var id = $('.modal');
+
+	// Remember what opened me to focus when closing
+	var lastFocus = $(this);
+
+	// Set size of mask to size of screen
+	resizeMask();
+	
+	// Transition effect - mask
+	$('#mask').show();
+	
+	// Set size and position modal
+	resizeModal(id);
+
+	// Transition effect and focus the modal
+	$(id).show();
+	//$(id).focus();
+	// $(id).show(
+	// 	function() {
+	// 		$(id).focus();
+	// 	}
+	// );
+	setTimeout(focusIt, 1000);
+	function focusIt(){
+		$(id).focus();
+	}
+
+	
+	// Call function to maintain focus within the modal
+	var obj = $(this).attr('href').replace("/","");
+	obj = (obj.replace("#",""));
+	var el = document.getElementById(obj);
+	keepFocus(el);
+
+	// Close - if close button is clicked
+	$('.modal .close').click(function (e) {
+		e.preventDefault();
+		$('#mask, .modal').hide();
+		lastFocus.focus();
+	});
+
+	// Close - Escape key
+	$(document).on('keydown', function (e) {
+	    if (e.keyCode === 27) { // ESC
+			$('#mask, .modal').hide();
+			lastFocus.focus();
+	    }
+	});
+});
+
+// Resize modal when window resized
+$(window).resize(function () {
+	var id = $('.modal');
+
+	// Resize the mask
+	resizeMask();
+
+	// Call function to resize and reposition modal
+	resizeModal(id);
+});
+
+// Maintain focus within modal
+var tabbableElements = 'a[href], area[href], input:not([disabled]),' +
+	'select:not([disabled]), textarea:not([disabled]),' +
+	'button:not([disabled]), iframe, object, embed, *[tabindex],' +
+	'*[contenteditable]';
+
+var keepFocus = function (context) {
+	var allTabbableElements = context.querySelectorAll(tabbableElements);
+	var firstTabbableElement = context;
+	var lastTabbableElement = allTabbableElements[allTabbableElements.length - 1];
+ 
+	var keyListener = function (event) {
+		var keyCode = event.which || event.keyCode; // Get the current keycode
+ 
+		// Polyfill to prevent the default behavior of events
+		event.preventDefault = event.preventDefault || function () {
+			event.returnValue = false;
+		};
+ 
+		// If it is TAB
+		if (keyCode === 9) {
+ 
+			// Move focus to first element that can be tabbed if Shift isn't used
+			if (event.target === lastTabbableElement && !event.shiftKey) {
+				event.preventDefault();
+				firstTabbableElement.focus();
+ 
+			// Move focus to last element that can be tabbed if Shift is used
+			} else if (event.target === firstTabbableElement && event.shiftKey) {
+				event.preventDefault();
+				lastTabbableElement.focus();
+			}
+		}
+	};
+ 
+	context.addEventListener('keydown', keyListener, false);
+};
+</script>
+
+</body>
+</html>

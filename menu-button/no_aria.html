@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8" />
+	<title>Dropdown Menu Button</title>
+	<meta name="description" content="Dropdown Menu Button - ARIA Example - HTML5 Dev Conference" />
+	<meta name="author" content="PayPal, Dennis Lembree, Stephen Westhafter" />
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/dropdownMenuAlt.css" />
+	<script src="js/modernizr-2.0.6.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+	<header role="banner">
+		<h1>Dropdown Menu Button: No ARIA</h1>
+	</header>
+
+	<div role="main">
+
+		<p>She must have hidden the plans in the <a href="http://www.starwars.com/explore/encyclopedia/technology/escapepod/">escape pod</a>. Send a detachment down to retrieve them, and see to it personally, Commander. There'll be no one to stop us this time! You're all clear, kid. Let's blow this thing and go home! I need your help, Luke. She needs your help. I'm getting too old for this sort of thing. Escape is not his plan. I must face him, alone.</p>
+
+		<div class="dropdownMenuAlt">
+			
+			<a href="#ddMenuList1" id="ddMenu1" class="menuButton">Share Options</a>
+			
+			<div aria-labelledby="ddMenu1">
+				<div id="ddMenuList1">
+					<ul>
+						<li><a href="http://www.facebook.com">Facebook</a></li>
+						<li><a href="http://www.twitter.com">Twitter</a></li>
+						<li><a href="http://www.linkedin.com">LinkedIn</a></li>
+						<li><a href="mailto:dlembree@paypal.com?subject=sweet dropdown demo!">Email</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<p>I find your lack of faith disturbing. No! <a href="http://starwars.wikia.com/wiki/Alderaan">Alderaan</a> is peaceful. We have no weapons. You can't possibly&hellip;</p>
+		
+	</div>
+
+	<footer role="contentinfo">
+		<p>Authors: Dennis Lembree, Stephen Westhafter, Nawaz Khan</p>
+	</footer>
+
+</div>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui-1.8.22.core.min.js"></script>
+<script src="js/dropdownMenuAlt_no_aria.js"></script>
+
+<script>
+$(document).ready(function() {
+	$( '.dropdownMenuAlt' ).dropdownMenuAlt();
+});
+</script>
+
+</body>
+</html>

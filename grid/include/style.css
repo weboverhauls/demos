@@ -1,0 +1,93 @@
+/* reset lists */
+ol, ul {
+	list-style:none;
+}
+ol, ul, li {
+	margin:0;
+	padding:0;
+}
+
+/* table/grid title */
+.gridCaption {
+	text-align: center;
+	margin-bottom: .2rem;
+	font-size: 1.25rem;
+}
+
+/* row link */
+.tableRowInner a {
+    border-bottom: 1px solid #ddd;
+}
+.tableRow:first-child a {
+    border-top: 1px solid #ddd;
+}
+.tableRow a:focus,
+.tableRow a:hover {
+	background-color: #eee;
+}
+
+/* table/grid layout */
+.tableRow .tableColumn {
+    display: block;
+    float: left;
+	color: #333;
+}
+.tableRow .tableRowInner > a {
+    display: block;
+	float: left;
+	padding: .75rem 0;
+    text-decoration: none;
+	width: 117%;
+}
+.tableRowInner {
+	float: left;
+	width: 85%;
+}
+.tableRow:last-child .tableRowInner {
+	padding-bottom: 1.5em;
+}
+.tableRow .tableColumn.date {
+	width: 25%;
+}
+.tableRow .tableColumn.desc {
+	width: 40%;
+}
+.tableRow .tableColumn.price {
+    text-align: right;
+	width: 25%;
+}
+
+/* hide content with clipping */
+.accessAid {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+
+/* OVERWRITING COMPONENT */
+.js .dropdownMenuAlt {
+	float: left;
+	left: 10%;
+	top: 0.2rem;
+}
+.js .dropdownMenuAlt > div > div > ul {
+    left: -9.5rem;
+	width: 11rem;
+}
+
+/* NON-JS adjustments */
+.no-js .dropdownMenuAlt {
+	text-align: right;
+}
+.no-js .menuButton {
+	display: none;
+}
+.no-js .tableRowInner > a {
+	padding-bottom: 2rem;
+}

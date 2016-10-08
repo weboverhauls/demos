@@ -5,6 +5,19 @@
 	<title>Accessibility test for CSS3 Animation to Show/Hide</title>
 	<meta name="author" content="Dennis Lembree" />
 <style>
+#bar[role=button]{
+	display: inline-block;
+	margin: .5em 0;
+	padding: .5em;
+	text-decoration: none;
+	border: 1px #ccc solid;
+	border-radius: .5em;
+}
+#bar[role=button]:hover,
+#bar[role=button]:focus{
+	border-color: #000;
+}
+
 /* keyframes - show */
 @keyframes show {
 	from {
@@ -115,7 +128,7 @@
 
 <body>
 
-<div><a class="bar" href="#foo" aria-controls="foo" aria-expanded="true">Toggle</a></div>
+<div><a id="bar" href="#foo" aria-controls="foo" aria-expanded="true">Toggle</a></div>
 <div id="foo" class="displayed">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. </div>
 
 <!-- jQuery hosted by Google --> 
@@ -125,10 +138,13 @@
 (function(){
 
 	// Add ARIA roles
-	$('a.bar').attr('role', 'button');
+	$("a#bar")
+		.attr("role","button")
+		.attr("aria-controls","foo")
+		.attr("aria-expanded","true");
 	
 	// Click handler and functionality
-	$("a").click(function(e) {
+	$("a#bar").click(function(e) {
 		
 		e.preventDefault();
 		$('#foo').removeAttr('style');
@@ -150,6 +166,13 @@
 		if (!$("#foo").hasClass("displayed")) {
 			$('#foo').css("display","none");
 		}
+	});
+
+	// call interaction on spacebar
+	$("a#bar").keydown(function(e) {
+	    if (e.keyCode == 32) {
+			$("a#bar").click();
+	    }
 	});
 	
 })();

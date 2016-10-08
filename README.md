@@ -8,9 +8,9 @@ By Dennis Lembree @dennisl
 
 - [Expand-Collapse](https://weboverhauls.github.io/demos/expand-collapse/)
 
-- Dropdown Menu Button - [No ARIA](https://weboverhauls.github.io/demos/menu-button/no_aria.html) - [with ARIA](https://weboverhauls.github.io/demos/menu-button/with_aria.html)
+- Dropdown Menu Button: [No ARIA](https://weboverhauls.github.io/demos/menu-button/no_aria.html) - [with ARIA](https://weboverhauls.github.io/demos/menu-button/with_aria.html)
 
-- Modal Dialog - [Example 1](https://weboverhauls.github.io/demos/modal/modal_demo.html) - [Example 2](https://weboverhauls.github.io/demos/modal/modal_demo2.html)
+- Modal Dialog: [Example 1](https://weboverhauls.github.io/demos/modal/modal_demo.html) - [Example 2 (improved)](https://weboverhauls.github.io/demos/modal/modal_demo2.html)
 
 - [Tab Panel](https://weboverhauls.github.io/demos/tab-panel/)
 

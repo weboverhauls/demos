@@ -5,19 +5,6 @@
 	<title>Accessibility test for CSS3 Animation to Show/Hide</title>
 	<meta name="author" content="Dennis Lembree" />
 <style>
-#bar[role=button]{
-	display: inline-block;
-	margin: .5em 0;
-	padding: .5em;
-	text-decoration: none;
-	border: 1px #ccc solid;
-	border-radius: .5em;
-}
-#bar[role=button]:hover,
-#bar[role=button]:focus{
-	border-color: #000;
-}
-
 /* keyframes - show */
 @keyframes show {
 	from {
@@ -102,6 +89,19 @@
 	}
 }
 
+#bar[role=button]{
+	display: inline-block;
+	margin: .5em 0;
+	padding: .5em;
+	text-decoration: none;
+	border: 1px #ccc solid;
+	border-radius: .5em;
+}
+#bar[role=button]:hover,
+#bar[role=button]:focus{
+	border-color: #000;
+}
+
 #foo {
 	max-height: 0;
 	overflow: hidden;
@@ -152,12 +152,12 @@
 		if ($("#foo").hasClass('displayed')) {
 			// If showing, then hide it
 			$("#foo").removeClass("displayed");
-			$('a.bar').attr('aria-expanded', 'false');
+			$('a#bar').attr('aria-expanded', 'false');
 		}
 		else {
 			// If hidden, then show it
 			$("#foo").addClass("displayed");
-			$('a.bar').attr('aria-expanded', 'true');
+			$('a#bar').attr('aria-expanded', 'true');
 		}
 	});
 

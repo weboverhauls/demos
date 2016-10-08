@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<title>Modal Dialog Example 2</title>
 	<meta name="description" content="Demonstration of an accessible modal dialog with progressive enhancement." />
-	<meta name="keywords" content="demo, dialog, modal, accessibility, a11y, example" />
+	<meta name="keywords" content="demo, dialog, modal, accessibility, a11y, example, web, dev, development" />
 	<meta name="author" content="Dennis Lembree" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -50,8 +49,14 @@ p {
 	
 	<p><a href="#search" class="openModal">Go To Search</a></p>
 	
-	<p>Filler text. Ipsum <a href="#">test</a> lorem.</p>
-	
+	<p>Improvements/differences from original version:</p>
+	<ul>
+		<li>Button now looks like a button.</li>
+		<li>Spacebar invokes button behavior.</li>
+		<li>Focus element now focused upon opening modal rather than the container.</li>
+		<li>Code to maintain focus is much lighter and now supports Shift+Tab.</li>
+	</ul>
+
 	<div id="search" class="modal" aria-label="Search">
 		<form id="frmSearch" action="/search" method="post">
 			<label for="query">Enter search terms:</label>
@@ -63,7 +68,9 @@ p {
 	<div id="mask"></div>
 
 	<h2>More</h2>
-	<p><a href="modal_demo.html">original modal demo</a></p>
+	<ul>
+		<li><a href="modal_demo.html">original modal demo</a></li>
+	</ul>
 
 </div>
 

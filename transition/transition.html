@@ -3,19 +3,22 @@
 <head>
 	<meta charset="utf-8" />
 	<title>CSS3 Show-Hide with Transition</title>
+	<meta name="keywords" content="css, css3, show, hide, transition, accessibility, a11y, dev, web, development" />
 	<meta name="author" content="Dennis Lembree" />
 
 <style>
 #foo {
-	height: 50px;
-	padding: 10px;
+	height: 8em;
+	max-width: 30em;
+	padding: .75em;
 	overflow: hidden;
 	background-color: #eee;
+	border-radius: .5em;
 	transition: 0.5s height, 0.5s padding;
 }
 #foo.hidden {
 	height: 0;
-	padding: 0 10px;
+	padding: 0 .75em;
 	visibility: hidden;
 	transition:0.5s height, 0.5s padding, 0s visibility 0.5s;
 }
@@ -25,7 +28,7 @@
 	padding: .5em;
 	text-decoration: none;
 	border: 1px #ccc solid;
-	border-radius: 5px;
+	border-radius: .5em;
 }
 #bar[role=button]:hover,
 #bar[role=button]:focus{
@@ -39,7 +42,7 @@
 <h1>Example of accessible show/hide using CSS Transition (and progressive enhancement)</h1>
 
 <div><a id="bar" href="#foo">Star Wars ipsum</a></div>
-<div id="foo">Boba yoda wicket gamorrean ponda sebulba. Secura kit skywalker ackbar hutt darth owen. Boba leia antilles kenobi antilles amidala luuke biggs qui-gon. Darth calrissian lando moff mustafar ewok sidious. Obi-wan amidala darth yoda qui-gon solo boba jade antilles. Kenobi hutt twi'lek mara grievous coruscant boba. Dagobah dantooine kit skywalker watto mon. Gamorrean skywalker lars skywalker dooku mothma yoda.</div>
+<div id="foo">Boba yoda wicket gamorrean ponda sebulba. Secura kit skywalker ackbar hutt darth owen. Boba leia antilles kenobi antilles amidala luuke biggs qui-gon. Darth calrissian lando moff mustafar ewok sidious. Obi-wan amidala darth yoda qui-gon solo boba jade antilles. Kenobi hutt grievous coruscant boba. Dagobah dantooine skywalker dooku mothma yoda.</div>
 
 <script src="jquery-1.7.2.min.js"></script>
 <script>

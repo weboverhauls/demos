@@ -6,7 +6,10 @@ By Dennis Lembree @dennisl
 
 - [Interactive elements within grid layout](https://weboverhauls.github.io/demos/grid/)
 
-- [Expand-Collapse](https://weboverhauls.github.io/demos/expand-collapse/)
+- Expand-Collapse
+  - [Expand-Collapse (classic)](https://weboverhauls.github.io/demos/expand-collapse/)
+  - [show/hide using CSS transition](https://weboverhauls.github.io/demos/transition/transition.html)
+  - [show/hide using CSS animation](https://weboverhauls.github.io/demos/transition/animation.html)
 
 - Dropdown Menu Button: [No ARIA](https://weboverhauls.github.io/demos/menu-button/no_aria.html) - [with ARIA](https://weboverhauls.github.io/demos/menu-button/with_aria.html)
 
@@ -15,5 +18,3 @@ By Dennis Lembree @dennisl
 - [Tab Panel](https://weboverhauls.github.io/demos/tab-panel/)
 
 - [Toggle Switch](https://weboverhauls.github.io/demos/toggle_switch/)
-
-- [show/hide using CSS transition](https://weboverhauls.github.io/demos/transition/transition.html)

@@ -21,8 +21,11 @@
 	text-decoration: none;
 	border-radius: 5px;
 }
-#bar[aria-expanded=true] {
-	border: 1px #f00 solid;
+#bar[aria-expanded=false] span:before {
+	content: "+ ";
+}
+#bar[aria-expanded=true] span:before {
+	content: "- ";
 }
 #foo {
 	padding: .5rem;
@@ -45,7 +48,7 @@
 <p>Filler text. Lorem ipsum dolor sit amet. <a href="#">Lorem</a> ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
 
 <div id="container">
-	<a id="bar" href="#foo">Toggle</a>
+	<a id="bar" href="#foo"><span aria-hidden="true"></span>Toggle</a>
 	<div id="foo" aria-labelledby="bar">Lorem ipsum dolor sit amet. <a href="#">Lorem</a> ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
 </div>
 

@@ -2,12 +2,9 @@
 
 	$.fn.tabs = function tabs (options) {
 
-		// to do: add option to for tabindex=0 on panels
-		// to do: add option to remove panel headings
-		//var options = options || {};
-
 		return this.each(function onEach() {
 
+			// set variables
 			var $tabsWidget = $(this),
 				$tablist = $tabsWidget.find('> ul'),
 				$tabs = $tablist.find('> li'),
@@ -77,7 +74,7 @@
 
 			// Capture key events on tabs
 			$($tabsWidget).find("a[role='tab']").keydown(function(event) {
-				if (event.which === 37 || event.which === 38) { // left/up
+				if (event.which === 37 || event.which === 38) { // left or up keys
 					prevItem = $(event.currentTarget).parent().prev().find("a");
 					// Go to previous, if exists
 					if (prevItem.length > 0) {
@@ -91,7 +88,7 @@
 						event.preventDefault();
 					}
 				}
-				else if (event.which === 39 || event.which === 40) { // right/down
+				else if (event.which === 39 || event.which === 40) { // right or down keys
 					nextItem = $(event.currentTarget).parent().next().find("a");
 					// Go to next, if exists
 					if (nextItem.length > 0) {
@@ -104,6 +101,16 @@
 						focusTab(firstItem);
 						event.preventDefault(); 
 					}
+				}
+				else if (event.which === 36) { // home key
+					firstItem = $(event.currentTarget).parent().siblings().first().find("a");
+					focusTab(firstItem);
+					event.preventDefault();
+				}
+				else if (event.which === 35) { // end key
+					lastItem = $(event.currentTarget).parent().siblings().last().find("a");
+					focusTab(lastItem);
+					event.preventDefault();
 				}
 			});
 

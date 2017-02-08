@@ -74,7 +74,7 @@
 
 			// Capture key events on tabs
 			$($tabsWidget).find("a[role='tab']").keydown(function(event) {
-				if (event.which === 37 || event.which === 38) { // left or up keys
+				if (event.which === 37) { // left arrow key
 					prevItem = $(event.currentTarget).parent().prev().find("a");
 					// Go to previous, if exists
 					if (prevItem.length > 0) {
@@ -88,7 +88,7 @@
 						event.preventDefault();
 					}
 				}
-				else if (event.which === 39 || event.which === 40) { // right or down keys
+				else if (event.which === 39) { // right arrow key
 					nextItem = $(event.currentTarget).parent().next().find("a");
 					// Go to next, if exists
 					if (nextItem.length > 0) {

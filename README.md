@@ -7,7 +7,7 @@ By Dennis Lembree @dennisl
 - [Interactive elements within grid layout](https://weboverhauls.github.io/demos/grid/)
 
 - Expand-Collapse
-  - Expand-Collapse [Version 1](https://weboverhauls.github.io/demos/expand-collapse/) [Version 2](https://weboverhauls.github.io/demos/expand-collapse/index2.html)
+  - Classic expand-collapse [Version 1](https://weboverhauls.github.io/demos/expand-collapse/) - [Version 2](https://weboverhauls.github.io/demos/expand-collapse/index2.html)
   - [show/hide using CSS transition](https://weboverhauls.github.io/demos/transition/transition.html)
   - [show/hide using CSS animation](https://weboverhauls.github.io/demos/transition/animation.html)
 

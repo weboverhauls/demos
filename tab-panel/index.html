@@ -83,7 +83,7 @@ a:focus + [role="tooltip"] {
     animation: fade-out 1s ease-in;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
-    animation-delay: 2.5s;
+    animation-delay: 3s;
     opacity: 1;
 }
 
@@ -148,12 +148,11 @@ kbd {
 </div>
 
 <h2>With instructions/tooltip and focusable panels</h2>
-<p>To select a tab, click, tap or use arrow keys <kbd>&#8592;</kbd> <kbd>&#8594;</kbd>.</p>
+<!-- <p>To select a tab, click, tap or use arrow keys <kbd>&#8592;</kbd> <kbd>&#8594;</kbd>.</p> -->
 <div class="tabwidget" id="tabmusic-wt">
 	<ul>
 		<li>
 			<a href="#panel1-wt" aria-describedby="tab-tip-wt">The Cure</a>
-			<div role="tooltip" id="tab-tip-wt">To select a tab, click, tap or use arrow keys.</div>
 		</li>
 		<li>
 			<a href="#panel2-wt">Beastie Boys</a>
@@ -184,8 +183,18 @@ kbd {
 
 </div>
 
+<footer>
+	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>
+$('<div role="tooltip" id="tab-tip-wt">To select a tab, click, tap or use arrow keys.</div>').insertAfter("#tabmusic-wt li:first a");
+</script>
+
 <script src="tab-panel.js"></script>
+
 <script>
 $(function() {
 	$('.tabwidget').tabs();

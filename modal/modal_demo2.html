@@ -55,7 +55,8 @@ p {
 		<li>Spacebar invokes button behavior.</li>
 		<li>Focus element now focused upon opening modal rather than the container.</li>
 		<li>Code to maintain focus is much lighter and now supports Shift+Tab.</li>
-		<li>Added aria-modal attribute (ARIA 1.1)</li>
+		<li>Added aria-modal=true attribute (ARIA 1.1)</li>
+		<li>Added aria-haspopup=dialog attribute (ARIA 1.1)</li>
 	</ul>
 
 	<div id="search" class="modal" aria-label="Search">
@@ -85,7 +86,7 @@ p {
 **************************** */
 
 // Initialize (these roles can confuse AT user if JS not running)
-$(".openModal").attr("role","button");
+$(".openModal").attr("role","button").attr("aria-haspopup","dialog");
 $(".modal").attr("role","dialog").attr("aria-modal","true");
 $(".modal").css("display","none");
 

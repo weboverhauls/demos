@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>SVG | Accessible Examples | test page</title>
+     <meta name="description" content="Example of accessible SVG content." />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+References:
+http://www.stommepoes.nl/work/firefox_svg.html
+http://ljwatson.github.io/decks/2017/lws/index.html
+https://www.sitepoint.com/tips-accessible-svg/
+https://css-tricks.com/accessible-svgs/
+http://simplyaccessible.com/article/7-solutions-svgs/
+https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/
+-->
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" width="0" height="0" viewBox="0 0 32 32">
+	<symbol id="warning" viewBox="0 0 18 18">
+		<path d="M9.9999375,12.4775 C9.9999375,12.7525 9.7749375,12.9775 9.4999375,12.9775 L8.4999375,12.9775 C8.2249375,12.9775 7.9999375,12.7525 7.9999375,12.4775 L7.9999375,7.4775 C7.9999375,7.2025 8.2249375,6.9775 8.4999375,6.9775 L9.4999375,6.9775 C9.7749375,6.9775 9.9999375,7.2025 9.9999375,7.4775 L9.9999375,12.4775 Z M9.9999375,15.4775 C9.9999375,15.7525 9.7749375,15.9775 9.4999375,15.9775 L8.4999375,15.9775 C8.2249375,15.9775 7.9999375,15.7525 7.9999375,15.4775 L7.9999375,14.4775 C7.9999375,14.2025 8.2249375,13.9775 8.4999375,13.9775 L9.4999375,13.9775 C9.7749375,13.9775 9.9999375,14.2025 9.9999375,14.4775 L9.9999375,15.4775 Z M17.9469375,17.2535 L9.4469375,0.2535 C9.2769375,-0.0845 8.7229375,-0.0845 8.5529375,0.2535 L0.0529375,17.2535 C-0.0240625,17.4095 -0.0170625,17.5925 0.0739375,17.7405 C0.1659375,17.8875 0.3269375,17.9775 0.4999375,17.9775 L17.4999375,17.9775 C17.6729375,17.9775 17.8339375,17.8875 17.9259375,17.7405 C18.0169375,17.5925 18.0239375,17.4095 17.9469375,17.2535 L17.9469375,17.2535 Z"/>
+	</symbol>
+</svg>
+
+<svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+	<symbol id="icon-checkmark" viewBox="0 0 16 16">
+	<title>checkmark</title>
+		<path class="path1" d="M13.5 2l-7.5 7.5-3.5-3.5-2.5 2.5 6 6 10-10z"></path>
+	</symbol>
+	</defs>
+</svg>
+
+<style type="text/css">
+section {
+	border: 1px #ccc solid;
+	margin: 1em 0;
+	padding: 1em 2em;
+}
+pre {
+    background-color: #efefef;
+    padding: 1em;
+}
+body {
+	padding-bottom: 10em;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<h1>Accessible SVG test page</h1>
+<!-- <p>Last updated June 30, 2017.</p> -->
+<p>Possible nuances and fixes:</p>
+<ul>
+	<li>Use focusable="false" especially for decorative SVG to make elements not focusable in IE</li>
+	<li>Older AT/browser combinations may not announce aria-describedby.</li>
+	<li>Safari bug (now fixed): IMG elements with an SVG src are ignored by VO despite valid alt attribute</li>
+	<li>Voiceover support on iOS and OSX may be broken.</li>
+	<li>Force focus in IE using tabindex=0</li>
+</ul>
+
+
+<section>
+<h2>Content | inline | no aria</h2>
+<svg version="1.1" width="40" height="40">
+	<title>red square</title>
+	<rect width="40" height="40" fill="#cc0000" />
+</svg>
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;title&gt;red square&lt;/title&gt;
+	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Content | inline | with aria</h2>
+<svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-0">
+	<title id="title-0">red square</title>
+	<rect width="40" height="40" fill="#cc0000" />
+</svg>
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; role=&quot;img&quot; aria-labelledby=&quot;title-0&quot;&gt;
+	&lt;title id=&quot;title-0&quot;&gt;red square&lt;/title&gt;
+	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Content | inline | title + description</h2>
+<svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-1" aria-describedby="desc-1">
+	<title id="title-1">checkmark</title>
+	<desc id="desc-1">A plain red square defined at 40 pixels in length and height.</desc>
+	<rect width="40" height="40" fill="#cc0000" />
+</svg>
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; role=&quot;img&quot; aria-labelledby=&quot;title-1&quot; aria-describedby=&quot;desc-1&quot;&gt;
+	&lt;title id=&quot;title-1&quot;&gt;checkmark&lt;/title&gt;
+	&lt;desc id=&quot;desc-1&quot;&gt;A plain red square defined at 40 pixels length and height.&lt;/desc&gt;
+	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Content | inline | title + description (2 values in aria-labelledby)</h2>
+<svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-2 desc-2">
+	<title id="title-2">checkmark</title>
+	<desc id="desc-2">A plain red square defined at 40 pixels in length and height.</desc>
+	<rect width="40" height="40" fill="#cc0000" />
+</svg>
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; role=&quot;img&quot; aria-labelledby=&quot;title-2 desc-2&quot;&gt;
+	&lt;title id=&quot;title-2&quot;&gt;checkmark&lt;/title&gt;
+	&lt;desc id=&quot;desc-2&quot;&gt;A plain red square defined at 40 pixels length and height.&lt;/desc&gt;
+	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Content | IMG | alt</h2>
+<p><img src="checkmark.svg" width="50" alt="checkmark"></p>
+<pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Content | IMG | alt + role=img</h2>
+<p><img src="checkmark.svg" width="50" alt="checkmark" role="img"></p>
+<pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot; role=&quot;img&quot;&gt;&lt;/p&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Content | hide | duplicate visual text</h2>
+<div>
+	<svg width="40" height="40" aria-hidden="true">
+		<title>checkmark</title>
+		<use xlink:href="#icon-checkmark"></use>
+	</svg> 
+	<p>Success! Your order went through.</p>
+</div>
+<pre><code>&lt;div&gt;
+	&lt;svg width=&quot;40&quot; height=&quot;40&quot; aria-hidden=&quot;true&quot;&gt;
+		&lt;title&gt;checkmark&lt;/title&gt;
+		&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt; 
+	&lt;p&gt;Success! Your order went through.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Link | Inline | title</h2>
+<a href="javascript:alert('Warning: you must rock!');">
+	<svg role="img" aria-labelledby="title-3" focusable="false" width="40" height="40">
+		<title id="title-3">Warning</title>
+		<use xlink:href="#warning"></use>
+	</svg>
+</a>
+<pre><code>&lt;a href=&quot;javascript:alert('Warning: you must rock!');&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-3&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title id=&quot;title-3&quot;&gt;Warning&lt;/title&gt;
+		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Link | Inline | aria-label</h2>
+<a href="javascript:alert('Warning: you must roll!');" aria-label="show warning">
+	<svg role="img" aria-labelledby="title-4" focusable="false" width="40" height="40">
+		<title id="title-4">Warning</title>
+		<use xlink:href="#warning"></use>
+	</svg>
+</a>
+<pre><code>&lt;a href=&quot;javascript:alert('Warning: you must roll!');&quot; aria-label=&quot;show warning&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-4&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title id=&quot;title-4&quot;&gt;Warning&lt;/title&gt;
+		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Link | IMG | alt</h2>
+<a href="javascript:alert('You passed cause you rock and roll!');">
+	<img src="checkmark.svg" width="50" height="50" alt="passing information">
+</a>
+<pre><code>&lt;a href=&quot;javascript:alert('You passed cause you rock and roll!');&quot;&gt;
+	&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; height=&quot;50&quot; alt=&quot;passing information&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA:</li>
+	<li>VO:</li>
+</ul>
+</section>
+
+
+<!-- <h2>Button (same as link?)</h2> -->
+
+<!-- <h2>Button with an image?</h2> -->
+
+
+
+
+
+</body>
+</html>

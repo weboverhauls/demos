@@ -15,6 +15,8 @@ By Dennis Lembree @dennisl
 
 - Modal Dialog: [Example 1](https://weboverhauls.github.io/demos/modal/modal_demo.html) - [Example 2 (improved)](https://weboverhauls.github.io/demos/modal/modal_demo2.html)
 
+- [SVG Test Page](https://weboverhauls.github.io/demos/svg/)
+
 - [Tab Panel](https://weboverhauls.github.io/demos/tab-panel/)
 
 - [Toggle Switch](https://weboverhauls.github.io/demos/toggle_switch/)

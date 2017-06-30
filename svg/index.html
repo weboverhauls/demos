@@ -54,10 +54,10 @@ body {
 <div id="wrapper">
 
 <h1>Accessible SVG test page</h1>
-<!-- <p>Last updated June 30, 2017.</p> -->
-<p>Possible nuances and fixes:</p>
+<p>Last updated June 30, 2017. NVDA 2017.2; VO on OSX 10.12.5; JAWS TBD</p>
+<p>Possible nuances and fixes (may not be implemented below):</p>
 <ul>
-	<li>Use focusable="false" especially for decorative SVG to make elements not focusable in IE</li>
+	<li>Use focusable="false" for IE to ensure decorative SVG is not focusable and no double focus for links.</li>
 	<li>Older AT/browser combinations may not announce aria-describedby.</li>
 	<li>Safari bug (now fixed): IMG elements with an SVG src are ignored by VO despite valid alt attribute</li>
 	<li>Voiceover support on iOS and OSX may be broken.</li>
@@ -78,8 +78,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: fail</li>
+	<li>JAWS:</li>
+	<li>VO: fail</li>
 </ul>
 </section>
 
@@ -97,8 +98,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: fail</li>
 </ul>
 </section>
 
@@ -118,8 +120,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: fail</li>
+	<li>JAWS:</li>
+	<li>VO: fail</li>
 </ul>
 </section>
 
@@ -139,8 +142,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: fail</li>
 </ul>
 </section>
 
@@ -152,8 +156,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: fail</li>
 </ul>
 </section>
 
@@ -165,8 +170,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: pass</li>
 </ul>
 </section>
 
@@ -190,8 +196,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: pass</li>
 </ul>
 </section>
 
@@ -213,8 +220,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: pass</li>
 </ul>
 </section>
 
@@ -236,8 +244,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: pass</li>
 </ul>
 </section>
 
@@ -253,8 +262,9 @@ body {
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA:</li>
-	<li>VO:</li>
+	<li>NVDA: pass</li>
+	<li>JAWS:</li>
+	<li>VO: pass</li>
 </ul>
 </section>
 

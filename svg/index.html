@@ -73,7 +73,7 @@ body {
 
 
 <section>
-<h2>Content | inline | no aria</h2>
+<h2>Content | inline | no ARIA</h2>
 <svg version="1.1" width="40" height="40">
 	<title>red square</title>
 	<rect width="40" height="40" fill="#cc0000" />
@@ -93,7 +93,7 @@ body {
 
 
 <section>
-<h2>Content | inline | with aria</h2>
+<h2>Content | inline | with ARIA</h2>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-0">
 	<title id="title-0">red square</title>
 	<rect width="40" height="40" fill="#cc0000" />
@@ -211,7 +211,31 @@ body {
 
 
 <section>
-<h2>Link | Inline | title</h2>
+<h2>Link | Inline | title | no ARIA</h2>
+<a href="javascript:alert('Warning: you must rock!');">
+	<svg focusable="false" width="40" height="40">
+		<title>Warning</title>
+		<use xlink:href="#warning"></use>
+	</svg>
+</a>
+<pre><code>&lt;a href=&quot;javascript:alert('Warning: you must rock!');&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-3&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title id=&quot;title-3&quot;&gt;Warning&lt;/title&gt;
+		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+&lt;/a&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA: pass</li>
+	<li>JAWS: pass</li>
+	<li>VO: pass</li>
+</ul>
+</section>
+
+
+<section>
+<h2>Link | Inline | title | with ARIA</h2>
 <a href="javascript:alert('Warning: you must rock!');">
 	<svg role="img" aria-labelledby="title-3" focusable="false" width="40" height="40">
 		<title id="title-3">Warning</title>

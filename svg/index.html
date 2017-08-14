@@ -219,15 +219,15 @@ body {
 	</svg>
 </a>
 <pre><code>&lt;a href=&quot;javascript:alert('Warning: you must rock!');&quot;&gt;
-	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-3&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
-		&lt;title id=&quot;title-3&quot;&gt;Warning&lt;/title&gt;
+	&lt;svg focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
 <p>Test results:</p>
 <ul>
-	<li>NVDA: buggy (outputs title but other unintended text)</li>
+	<li>NVDA: fail</li>
 	<li>JAWS: pass</li>
 	<li>VO: pass</li>
 </ul>

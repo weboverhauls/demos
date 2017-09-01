@@ -46,6 +46,9 @@ pre {
 body {
 	padding-bottom: 10em;
 }
+h2 {
+	margin-top: 2em;
+}
 </style>
 
 </head>
@@ -55,6 +58,14 @@ body {
 <div id="wrapper">
 
 <h1>Accessible SVG test page</h1>
+
+<p>Jump to:</p>
+<ul>
+	<li><a href="#content">Content</a></li>
+	<li><a href="#links">Links</a></li>
+	<li><a href="#buttons">Buttons</a></li>
+</ul>
+
 <p>Last updated June 30, 2017. Feel free to <a href="https://github.com/weboverhauls/demos/tree/master/svg">pitch in via GitHub</a>.</p>
 <p>Tested with:</p>
 <ul>
@@ -72,8 +83,10 @@ body {
 </ul>
 
 
+<h2 id="content" tabindex="0">Content</h2>
+
 <section>
-<h2>Content | inline | no ARIA</h2>
+<h3>Content | inline | no ARIA</h3>
 <svg version="1.1" width="40" height="40">
 	<title>red square</title>
 	<rect width="40" height="40" fill="#cc0000" />
@@ -93,7 +106,7 @@ body {
 
 
 <section>
-<h2>Content | inline | with ARIA</h2>
+<h3>Content | inline | with ARIA</h3>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-0">
 	<title id="title-0">red square</title>
 	<rect width="40" height="40" fill="#cc0000" />
@@ -113,7 +126,7 @@ body {
 
 
 <section>
-<h2>Content | inline | title + description</h2>
+<h3>Content | inline | title + description</h3>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-1" aria-describedby="desc-1">
 	<title id="title-1">red square</title>
 	<desc id="desc-1">A plain red square defined at 40 pixels in length and height.</desc>
@@ -135,7 +148,7 @@ body {
 
 
 <section>
-<h2>Content | inline | title + description (2 values in aria-labelledby)</h2>
+<h3>Content | inline | title + description (2 values in aria-labelledby)</h3>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-2 desc-2">
 	<title id="title-2">red square</title>
 	<desc id="desc-2">A plain red square defined at 40 pixels in length and height.</desc>
@@ -157,7 +170,7 @@ body {
 
 
 <section>
-<h2>Content | IMG | alt</h2>
+<h3>Content | IMG | alt</h3>
 <p><img src="checkmark.svg" width="50" alt="checkmark"></p>
 <pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot;&gt;&lt;/p&gt;
 </code></pre>
@@ -171,7 +184,7 @@ body {
 
 
 <section>
-<h2>Content | IMG | alt + role=img</h2>
+<h3>Content | IMG | alt + role=img</h3>
 <p><img src="checkmark.svg" width="50" alt="checkmark" role="img"></p>
 <pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot; role=&quot;img&quot;&gt;&lt;/p&gt;
 </code></pre>
@@ -185,7 +198,7 @@ body {
 
 
 <section>
-<h2>Content | hide | duplicate visual text</h2>
+<h3>Content | hide | duplicate visual text</h3>
 <div>
 	<svg width="40" height="40" aria-hidden="true">
 		<title>checkmark</title>
@@ -210,8 +223,10 @@ body {
 </section>
 
 
+<h2 id="links" tabindex="0">Links</h2>
+
 <section>
-<h2>Link | Inline | title | no ARIA</h2>
+<h3>Link | Inline | title | no ARIA</h3>
 <a href="javascript:alert('Warning: you must rock!');">
 	<svg focusable="false" width="40" height="40">
 		<title>Warning</title>
@@ -235,7 +250,7 @@ body {
 
 
 <section>
-<h2>Link | Inline | title | with ARIA</h2>
+<h3>Link | Inline | title | with ARIA</h3>
 <a href="javascript:alert('Warning: you must rock!');">
 	<svg role="img" aria-labelledby="title-3" focusable="false" width="40" height="40">
 		<title id="title-3">Warning</title>
@@ -259,7 +274,7 @@ body {
 
 
 <section>
-<h2>Link | Inline | aria-label</h2>
+<h3>Link | Inline | aria-label</h3>
 <a href="javascript:alert('Warning: you must roll!');" aria-label="show warning">
 	<svg role="img" aria-labelledby="title-4" focusable="false" width="40" height="40">
 		<title id="title-4">Warning</title>
@@ -283,7 +298,7 @@ body {
 
 
 <section>
-<h2>Link | IMG | alt</h2>
+<h3>Link | IMG | alt</h3>
 <a href="javascript:alert('You passed cause you rock and roll!');">
 	<img src="checkmark.svg" width="50" height="50" alt="passing information">
 </a>
@@ -300,10 +315,93 @@ body {
 </section>
 
 
-<!-- <h2>Button (same as link?)</h2> -->
+<h2 id="buttons" tabindex="0">Buttons</h2>
 
-<!-- <h2>Button with an image?</h2> -->
+<section>
+<h3>Button | Inline | title | no ARIA</h3>
+<button onclick="alert('this is a warning')">
+	<svg focusable="false" width="40" height="40">
+		<title>Warning</title>
+		<use xlink:href="#warning"></use>
+	</svg>
+</button>
+<pre><code>&lt;button onclick=&quot;alert('this is a warning')&quot;&gt;
+	&lt;svg focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title&gt;Warning&lt;/title&gt;
+		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA: fail</li>
+	<li>JAWS: fail</li>
+	<li>VO: fail</li>
+</ul>
+</section>
 
+<section>
+<h3>Button | Inline | title | with ARIA</h3>
+<button onclick="alert('this is another warning')">
+	<svg role="img" aria-labelledby="title-5" focusable="false" width="40" height="40">
+		<title id="title-5">Warning</title>
+		<use xlink:href="#warning"></use>
+	</svg>
+</button>
+<pre><code>&lt;button onclick=&quot;alert('this is another warning')&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-5&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title id=&quot;title-5&quot;&gt;Warning&lt;/title&gt;
+		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA: pass</li>
+	<li>JAWS: fail</li>
+	<li>VO: pass</li>
+</ul>
+</section>
+
+<section>
+<h3>Button | Inline | aria-label</h3>
+<button aria-label="do test" onclick="alert('this is yet another warning')">
+	<svg focusable="false" width="40" height="40">
+		<title>Warning</title>
+		<use xlink:href="#warning"></use>
+	</svg>
+</button>
+<pre><code>&lt;button aria-label=&quot;do test&quot; onclick=&quot;alert('this is yet another warning')&quot;&gt;
+	&lt;svg focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+		&lt;title&gt;Warning&lt;/title&gt;
+		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
+	&lt;/svg&gt;
+&lt;/button&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA: pass</li>
+	<li>JAWS: pass</li>
+	<li>VO: pass</li>
+</ul>
+</section>
+
+<section>
+<h3>Button | IMG | alt</h3>
+<button onclick="javascript:alert('You clicked a checkmark.');">
+	<img src="checkmark.svg" width="50" height="50" alt="checkmark">
+</button>
+<pre><code>&lt;button onclick=&quot;javascript:alert('You clicked a checkmark.');&quot;&gt;
+	&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; height=&quot;50&quot; alt=&quot;checkmark&quot;&gt;
+&lt;/button&gt;
+</code></pre>
+<p>Test results:</p>
+<ul>
+	<li>NVDA: pass</li>
+	<li>JAWS: pass</li>
+	<li>VO: pass</li>
+</ul>
+</section>
 
 <footer>
 	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>

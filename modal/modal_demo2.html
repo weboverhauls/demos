@@ -198,6 +198,16 @@ $("#search").on('keydown', function (e) {
         }
     }
 });
+
+// Another method for maintaining focus via https://www.nczonline.net/blog/2013/02/12/making-an-accessible-dialog-box/
+// document.addEventListener("focus", function(event) {
+// 	var dialog = document.getElementById("search");
+// 	if (document.getElementById("query").style.display != "none" && !dialog.contains(event.target)) {
+// 		event.stopPropagation();
+// 		document.getElementById("query").focus();
+// 	}
+// }, true);
+
 </script>
 
 </body>

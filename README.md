@@ -4,6 +4,8 @@ Examples of web development with accessibility in mind.
 
 By Dennis Lembree @dennisl
 
+- [Autosuggest select dropdown](https://weboverhauls.github.io/demos/autosuggest/)
+
 - [Interactive elements within grid layout](https://weboverhauls.github.io/demos/grid/)
 
 - Expand-Collapse

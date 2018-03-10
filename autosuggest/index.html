@@ -125,7 +125,7 @@ input:focus {
 	<p>This is a heavily modified version of an accessible autosuggest from Intopia's autosuggest <a href="http://intopia.digital/articles/anatomy-accessible-auto-suggest/">article</a> and <a href="https://codepen.io/intopia/pen/Rogxja">code example</a> by Adem Cifcioglu. Changes include:</p>
 	<ul>
 		<li>Simplified the HTML and CSS.</li>
-		<li>Added variable for maximum number of options.</li>
+		<li>Added variable for maximum number of options displayed.</li>
 		<li>Improved responsive layout, made widget relatively positioned.</li>
 		<li>TO DO: Arrow up/down now skips the input.</li>
 		<li>TO DO: Removed jQuery dependency.</li>
@@ -216,7 +216,7 @@ function doSearch(locales, resultsLimit) {
 		}
 		var number = $("#res").children('[role="option"]').length;
 		if (number >= 1) {
-			$("#announce").text(+number + " suggestions found" + ", to navigate use up and down arrows");
+			$("#announce").text(number + " suggestions displayed. To navigate use up and down arrow keys.");
 		}
 
 	}
@@ -283,8 +283,8 @@ function moveUp(highlighted) {
 	if (highlighted) {
 		current = $('.highlight');
 		current.attr('aria-selected', false);
-		current.removeClass('highlight').prev('div').addClass('highlight');
-		current.prev('div').attr('aria-selected', true);
+		current.removeClass('highlight');
+		current.prev('div').addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.prev('div').attr('id'));
 		highlighted = false;
 	}

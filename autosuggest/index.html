@@ -128,7 +128,7 @@ input:focus {
 		<li>TO DO: Removed jQuery dependency.</li>
 		<li>Added aria-expanded.</li>
 		<li>Changed a few variable names in the Javascript.</li>
-		<li>Javascript formatting updates.</li>
+		<li>Some Javascript optimization and formatting updates.</li>
 		<li>Improved no-Javascript use case.</li>
 		<li>Changed options to U.S. cities.</li>
 	</ul>
@@ -159,9 +159,7 @@ $(document).ready(function() {
 		ESC: 27,
 		TAB: 9,
 		RETURN: 13,
-		LEFT: 37,
 		UP: 38,
-		RIGHT: 39,
 		DOWN: 40
 	};
 	$("#search").on("input", function(event) {
@@ -275,7 +273,7 @@ function doKeypress(keys, event) {
 function moveUp(highlighted) {
 	$("#search").removeAttr("aria-activedescendant");
 	if (highlighted) {
-		current = $('.highlight');
+		current = $('#res .highlight');
 		current.attr('aria-selected', false);
 		current.removeClass('highlight');
 		current.prev('div').addClass('highlight').attr('aria-selected', true);
@@ -293,7 +291,7 @@ function moveUp(highlighted) {
 function moveDown(highlighted) {
 	$("#search").removeAttr("aria-activedescendant");
 	if (highlighted) {
-		current = $('.highlight');
+		current = $('#res .highlight');
 		current.attr('aria-selected', false);
 		current.removeClass('highlight').next('div').addClass('highlight');
 		current.next('div').attr('aria-selected', true);

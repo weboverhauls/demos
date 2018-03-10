@@ -203,8 +203,9 @@ function doSearch(locales, resultsLimit) {
 			$('#announce').empty();
 			$(".autocomplete-suggestions").hide();
 			$("#search").attr("aria-expanded","false");
+			$("#search").removeAttr("aria-activedescendant");
+			$('#search').focus();
 			counter = 1;
-
 		});
 
 		//Add results to the list
@@ -240,10 +241,6 @@ function doKeypress(keys, event) {
 			$('#announce').empty();
 			$(".autocomplete-suggestions").hide();
 			$("#search").attr("aria-expanded","false");
-			break;
-
-		case keys.RIGHT:
-			return selectOption(highlighted);
 			break;
 
 		case keys.TAB:
@@ -286,7 +283,6 @@ function moveUp(highlighted) {
 		current.removeClass('highlight');
 		current.prev('div').addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.prev('div').attr('id'));
-		highlighted = false;
 	}
 	else {
 		//Go back to the bottom of the list
@@ -305,7 +301,6 @@ function moveDown(highlighted) {
 		current.removeClass('highlight').next('div').addClass('highlight');
 		current.next('div').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.next('div').attr('id'));
-		highlighted = false;
 	}
 	else {
 		//Go back to the top of the list

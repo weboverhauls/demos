@@ -14,6 +14,10 @@
 
 #search-autocomplete {
 	position: absolute;
+	border: 1px solid #999;
+	background: #fff;
+	width: 20rem;
+	display: none;
 }
 
 #res li {
@@ -56,13 +60,6 @@ input:focus {
 	outline: none;
 }
 
-.autocomplete-suggestions {
-	border: 1px solid #999;
-	background: #fff;
-	width: 20rem;
-	display: none;
-}
-
 .autocomplete-suggestion {
 	padding: .5rem .25rem;
 	font-size: 1.35rem;
@@ -102,7 +99,7 @@ input:focus {
 		<form>
 			<label for="search">City</label>
 			<input id="search" type="text" autocomplete="off">
-			<div class="autocomplete-suggestions" id="search-autocomplete"></div>
+			<div id="search-autocomplete"></div>
 			<input id="submit" type="submit" value="Search" />
 		</form>
 	</div>
@@ -190,8 +187,8 @@ function doSearch(locales, resultsLimit) {
 		if (results.length >= 1) {
 			$("#res").remove();
 			$('#announce').empty();
-			$(".autocomplete-suggestions").show();
-			$(".autocomplete-suggestions").append('<div id="res" role="listbox" tabindex="-1"></div>');
+			$("#search-autocomplete").show();
+			$("#search-autocomplete").append('<div id="res" role="listbox" tabindex="-1"></div>');
 			$("#search").attr("aria-expanded","true");
 			counter = 1;
 		}
@@ -201,7 +198,7 @@ function doSearch(locales, resultsLimit) {
 			$("#search").val($(this).text());
 			$("#res").remove();
 			$('#announce').empty();
-			$(".autocomplete-suggestions").hide();
+			$("#search-autocomplete").hide();
 			$("#search").attr("aria-expanded","false");
 			$("#search").removeAttr("aria-activedescendant");
 			$('#search').focus();
@@ -215,7 +212,7 @@ function doSearch(locales, resultsLimit) {
 				counter = counter + 1;
 			}
 		}
-		var number = $("#res").children('[role="option"]').length;
+		var number = results.length;
 		if (number >= 1) {
 			$("#announce").text(number + " suggestions displayed. To navigate use up and down arrow keys.");
 		}
@@ -224,7 +221,7 @@ function doSearch(locales, resultsLimit) {
 	else {
 		$("#res").remove();
 		$('#announce').empty();
-		$(".autocomplete-suggestions").hide();
+		$("#search-autocomplete").hide();
 		$("#search").attr("aria-expanded","false");
 	}
 
@@ -239,7 +236,7 @@ function doKeypress(keys, event) {
 			$("#search").removeAttr("aria-activedescendant");
 			$("#res").remove();
 			$('#announce').empty();
-			$(".autocomplete-suggestions").hide();
+			$("#search-autocomplete").hide();
 			$("#search").attr("aria-expanded","false");
 			break;
 
@@ -247,7 +244,7 @@ function doKeypress(keys, event) {
 			$("#search").removeAttr("aria-activedescendant");
 			$("#res").remove();
 			$('#announce').empty();
-			$(".autocomplete-suggestions").hide();
+			$("#search-autocomplete").hide();
 			$("#search").attr("aria-expanded","false");
 			break;
 
@@ -318,7 +315,7 @@ function selectOption(highlighted) {
 		$('#search').focus();
 		$("#res").remove();
 		$('#announce').empty();
-		$(".autocomplete-suggestions").hide();
+		$("#search-autocomplete").hide();
 		$("#search").attr("aria-expanded","false");
 	} else {
 		return;

@@ -124,13 +124,13 @@ input:focus {
 		<li>Simplified the HTML and CSS.</li>
 		<li>Added variable for maximum number of options displayed.</li>
 		<li>Improved responsive layout, made widget relatively positioned.</li>
-		<li>TO DO: Arrow up/down now skips the input.</li>
-		<li>TO DO: Removed jQuery dependency.</li>
+		<li>Arrow up/down only selects the options (previously focused the input).</li>
 		<li>Added aria-expanded.</li>
 		<li>Changed a few variable names in the Javascript.</li>
 		<li>Some Javascript optimization and formatting updates.</li>
 		<li>Improved no-Javascript use case.</li>
 		<li>Changed options to U.S. cities.</li>
+		<li>TO DO: Remove jQuery dependency.</li>
 	</ul>
 </div>
 
@@ -272,38 +272,44 @@ function doKeypress(keys, event) {
 
 function moveUp(highlighted) {
 	$("#search").removeAttr("aria-activedescendant");
-	if (highlighted) {
-		current = $('#res .highlight');
-		current.attr('aria-selected', false);
-		current.removeClass('highlight');
+
+	// if highlighted exists and if the highlighted item is not the first option
+	if (highlighted && !$("#res").children().first('div').hasClass('highlight')) {
+		removeCurrent();
 		current.prev('div').addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.prev('div').attr('id'));
 	}
 	else {
 		//Go back to the bottom of the list
+		removeCurrent();
 		current = $("#res").children().last('div');
-		current.addClass('highlight');
-		current.attr('aria-selected', true);
+		current.addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.attr('id'));
 	}
 }
 
 function moveDown(highlighted) {
 	$("#search").removeAttr("aria-activedescendant");
-	if (highlighted) {
-		current = $('#res .highlight');
-		current.attr('aria-selected', false);
-		current.removeClass('highlight').next('div').addClass('highlight');
-		current.next('div').attr('aria-selected', true);
+
+	// if highlighted exists and if the highlighted item is not the last option
+	if (highlighted && !$("#res").children().last('div').hasClass('highlight')) {
+		removeCurrent();
+		current.next('div').addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.next('div').attr('id'));
 	}
 	else {
 		//Go back to the top of the list
+		removeCurrent();
 		current = $("#res").children().first('div');
-		current.addClass('highlight');
-		current.attr('aria-selected', true);
+		current.addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.attr('id'));
 	}
+}
+
+function removeCurrent() {
+	current = $('#res .highlight');
+	current.attr('aria-selected', false);
+	current.removeClass('highlight');	
 }
 
 function selectOption(highlighted) {

@@ -210,7 +210,7 @@ function doSearch(locales, resultsLimit) {
 				counter = counter + 1;
 			}
 		}
-		var number = results.length;
+		var number = $("#res").children('[role="option"]').length;
 		if (number >= 1) {
 			$("#announce").text(number + " suggestions displayed. To navigate use up and down arrow keys.");
 		}

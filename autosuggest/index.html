@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Accessible Autosuggest Dropdown</title>
+     <meta name="description" content="Example of an accessible autosuggest dropdown select." />
+     <meta name="author" content="Dennis Lembree, Adem Cifcioglu" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+#autocomplete-wrapper {
+	position: relative;
+}
+
+#search-autocomplete {
+	position: fixed;
+}
+
+#res li {
+	list-style-type: none;
+}
+
+#res li:hover,
+#res li.highlight,
+#res div:hover,
+#res div.highlight {
+	background: #110D3B;
+	color: #FFF;
+}
+
+#search {
+	position: relative;
+	text-transform: capitalize;
+	width: 19rem;
+}
+
+#searchfield label {
+	display: block;
+	font-size: 1.35rem;
+}
+
+#searchfield form input {
+    padding: .5rem;
+	border: 2px solid #c8c8c8;
+	background-color: #fff;
+	border-radius: 6px;
+	color: #000;
+	font-weight: normal;
+	font-size: 1.35em;
+	margin: 0 auto;
+}
+
+#searchfield form input:focus,
+input:focus {
+	color: #000;
+	border: 2px solid #005499;
+	outline: none;
+}
+
+.autocomplete-suggestions {
+	border: 1px solid #999;
+	background: #fff;
+	width: 20rem;
+	display: none;
+}
+
+.autocomplete-suggestion {
+	padding: .5rem .25rem;
+	font-size: 1.35rem;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.autocomplete-selected {
+	background: #f0f0f0;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+}
+
+/* FOR DISPLAY ONLY */
+* {
+	font-family: "Serif";
+}
+.info {
+	padding: 1rem;
+	margin: 1rem 0;
+	border: 1px #ccc solid;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Accessible Autosuggest Dropdown</h1>
+
+<div id="autocomplete-wrapper">
+	<div id="announce" class="visually-hidden" aria-live="assertive"></div>
+
+	<div id="searchfield">
+		<form>
+			<label for="search">City</label>
+			<input role="combobox" id="search" type="text" autocomplete="off" aria-owns="res" aria-autocomplete="both">
+			<input id="submit" type="submit" value="Search" />
+		</form>
+	</div>
+	<div class="autocomplete-suggestions" id="search-autocomplete"></div>
+</div>
+
+<div class="info">
+	<h2>Keyboard Interaction</h2>
+	<ul>
+		<li><strong>UP and DOWN:</strong> Cycles through auto-suggestions.</li>
+		<li><strong>ESC:</strong> Close the menu</li>
+		<li><strong>ENTER:</strong> Select the currently focused auto-suggestion and close the menu.</li>
+		<li><strong>TAB:</strong> Close the menu, leave what the user has typed in the textbox and move focus to the next focusable element.</li>
+	</ul>
+	<h2>Screen-reader Interaction</h2>
+	<ul>
+		<li>When search results are returned, the count and instructions are announced.</li>
+		<li>When suggestions are arrowed through, they are announced.</li>
+	</ul>
+	<h2>Modified from Intopia</h2>
+	<p>This is a heavily modified version of an accessible autosuggest from Intopia's autosuggest <a href="http://intopia.digital/articles/anatomy-accessible-auto-suggest/">article</a> and <a href="https://codepen.io/intopia/pen/Rogxja">code example</a>. Changes include:</p>
+	<ul>
+		<li>Simplified the HTML and CSS.</li>
+		<li>Added variable for maximum number of options.</li>
+		<li>Made widget relatively positioned.</li>
+		<li>TO DO: Arrow up/down now skips the input.</li>
+		<li>TO DO: Removed jQuery dependency.</li>
+		<li>Changed a few variable names in the Javascript.</li>
+		<li>Javascript formatting updates.</li>
+		<li>Changed options to U.S. cities.</li>
+	</ul>
+</div>
+
+
+<footer>
+	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+		var resultsLimit = 5;
+		var locales = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", "Ann Arbor", "Antioch", "Apple Valley", "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta", "Atlantic City", "Augusta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Barnstable", "Baton Rouge", "Beaumont", "Bel Air", "Bellevue", "Berkeley", "Bethlehem", "Billings", "Birmingham", "Bloomington", "Boise", "Boise City", "Bonita Springs", "Boston", "Boulder", "Bradenton", "Bremerton", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", "Canton", "Cape Coral", "Carrollton", "Cary", "Cathedral City", "Cedar Rapids", "Champaign", "Chandler", "Charleston", "Charlotte", "Chattanooga", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Clarke County", "Clarksville", "Clearwater", "Cleveland", "College Station", "Colorado Springs", "Columbia", "Columbus", "Concord", "Coral Springs", "Corona", "Corpus Christi", "Costa Mesa", "Dallas", "Daly City", "Danbury", "Davenport", "Davidson County", "Dayton", "Daytona Beach", "Deltona", "Denton", "Denver", "Des Moines", "Detroit", "Downey", "Duluth", "Durham", "El Monte", "El Paso", "Elizabeth", "Elk Grove", "Elkhart", "Erie", "Escondido", "Eugene", "Evansville", "Fairfield", "Fargo", "Fayetteville", "Fitchburg", "Flint", "Fontana", "Fort Collins", "Fort Lauderdale", "Fort Smith", "Fort Walton Beach", "Fort Wayne", "Fort Worth", "Frederick", "Fremont", "Fresno", "Fullerton", "Gainesville", "Garden Grove", "Garland", "Gastonia", "Gilbert", "Glendale", "Grand Prairie", "Grand Rapids", "Grayslake", "Green Bay", "GreenBay", "Greensboro", "Greenville", "Gulfport-Biloxi", "Hagerstown", "Hampton", "Harlingen", "Harrisburg", "Hartford", "Havre de Grace", "Hayward", "Hemet", "Henderson", "Hesperia", "Hialeah", "Hickory", "High Point", "Hollywood", "Honolulu", "Houma", "Houston", "Howell", "Huntington", "Huntington Beach", "Huntsville", "Independence", "Indianapolis", "Inglewood", "Irvine", "Irving", "Jackson", "Jacksonville", "Jefferson", "Jersey City", "Johnson City", "Joliet", "Kailua", "Kalamazoo", "Kaneohe", "Kansas City", "Kennewick", "Kenosha", "Killeen", "Kissimmee", "Knoxville", "Lacey", "Lafayette", "Lake Charles", "Lakeland", "Lakewood", "Lancaster", "Lansing", "Laredo", "Las Cruces", "Las Vegas", "Layton", "Leominster", "Lewisville", "Lexington", "Lincoln", "Little Rock", "Long Beach", "Lorain", "Los Angeles", "Louisville", "Lowell", "Lubbock", "Macon", "Madison", "Manchester", "Marina", "Marysville", "McAllen", "McHenry", "Medford", "Melbourne", "Memphis", "Merced", "Mesa", "Mesquite", "Miami", "Milwaukee", "Minneapolis", "Miramar", "Mission Viejo", "Mobile", "Modesto", "Monroe", "Monterey", "Montgomery", "Moreno Valley", "Murfreesboro", "Murrieta", "Muskegon", "Myrtle Beach", "Naperville", "Naples", "Nashua", "Nashville", "New Bedford", "New Haven", "New London", "New Orleans", "New York", "New York City", "Newark", "Newburgh", "Newport News", "Norfolk", "Normal", "Norman", "North Charleston", "North Las Vegas", "North Port", "Norwalk", "Norwich", "Oakland", "Ocala", "Oceanside", "Odessa", "Ogden", "Oklahoma City", "Olathe", "Olympia", "Omaha", "Ontario", "Orange", "Orem", "Orlando", "Overland Park", "Oxnard", "Palm Bay", "Palm Springs", "Palmdale", "Panama City", "Pasadena", "Paterson", "Pembroke Pines", "Pensacola", "Peoria", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Pomona", "Pompano Beach", "Port Arthur", "Port Orange", "Port Saint Lucie", "Port St. Lucie", "Portland", "Portsmouth", "Poughkeepsie", "Providence", "Provo", "Pueblo", "Punta Gorda", "Racine", "Raleigh", "Rancho Cucamonga", "Reading", "Redding", "Reno", "Richland", "Richmond", "Richmond County", "Riverside", "Roanoke", "Rochester", "Rockford", "Roseville", "Round Lake Beach", "Sacramento", "Saginaw", "Saint Louis", "Saint Paul", "Saint Petersburg", "Salem", "Salinas", "Salt Lake City", "San Antonio", "San Bernardino", "San Buenaventura", "San Diego", "San Francisco", "San Jose", "Santa Ana", "Santa Barbara", "Santa Clara", "Santa Clarita", "Santa Cruz", "Santa Maria", "Santa Rosa", "Sarasota", "Savannah", "Scottsdale", "Scranton", "Seaside", "Seattle", "Sebastian", "Shreveport", "Simi Valley", "Sioux City", "Sioux Falls", "South Bend", "South Lyon", "Spartanburg", "Spokane", "Springdale", "Springfield", "St. Louis", "St. Paul", "St. Petersburg", "Stamford", "Sterling Heights", "Stockton", "Sunnyvale", "Syracuse", "Tacoma", "Tallahassee", "Tampa", "Temecula", "Tempe", "Thornton", "Thousand Oaks", "Toledo", "Topeka", "Torrance", "Trenton", "Tucson", "Tulsa", "Tuscaloosa", "Tyler", "Utica", "Vallejo", "Vancouver", "Vero Beach", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo", "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
+	var cache = {};
+	var current;
+	var searchedBefore = false;
+	var counter = 1;
+	var highlightCounter = 0;
+	var keys = {
+		ESC: 27,
+		TAB: 9,
+		RETURN: 13,
+		LEFT: 37,
+		UP: 38,
+		RIGHT: 39,
+		DOWN: 40
+	};
+	$("#search").on("input", function(event) {
+		doSearch(locales, resultsLimit);
+	});
+
+	$("#search").on("keydown", function(event) {
+		doKeypress(keys, event);
+	});
+});
+
+function doSearch(locales, resultsLimit) {
+	var query = $("#search").val();
+	$("#search").removeAttr("aria-activedescendant");
+
+	if ($("#search").val().length >= 2) {
+
+		//Case insensitive search and return matches to build the  array
+		var results = $.grep(locales, function(item) {
+			return item.search(RegExp("^" + query, "i")) != -1;
+		});
+
+		if (results.length >= 1) {
+			$("#res").remove();
+			$('#announce').empty();
+			$(".autocomplete-suggestions").show();
+			$(".autocomplete-suggestions").append('<div id="res" role="listbox" tabindex="-1"></div>');
+			counter = 1;
+		}
+
+		//Bind click event to list elements in results
+		$("#res").on("click", "div", function() {
+			$("#search").val($(this).text());
+			$("#res").remove();
+			$('#announce').empty();
+			$(".autocomplete-suggestions").hide();
+			counter = 1;
+
+		});
+
+		//Add results to the list
+		for (term in results) {
+			if (counter <= resultsLimit) {
+				$("#res").append("<div role='option' tabindex='-1' class='autocomplete-suggestion' id='suggestion-" + counter + "'>" + results[term] + "</div>");
+				counter = counter + 1;
+			}
+		}
+		var number = $("#res").children('[role="option"]').length;
+		if (number >= 1) {
+			$("#announce").text(+number + " suggestions found" + ", to navigate use up and down arrows");
+		}
+
+	}
+	else {
+		$("#res").remove();
+		$('#announce').empty();
+		$(".autocomplete-suggestions").hide();
+	}
+
+}
+
+function doKeypress(keys, event) {
+	var highlighted = false;
+	highlighted = $('#res').children('div').hasClass('highlight');
+	switch (event.which) {
+
+		case keys.ESC:
+			$("#search").removeAttr("aria-activedescendant");
+			$("#res").remove();
+			$('#announce').empty();
+			$(".autocomplete-suggestions").hide();
+			break;
+
+		case keys.RIGHT:
+			return selectOption(highlighted);
+			break;
+
+		case keys.TAB:
+			$("#search").removeAttr("aria-activedescendant");
+			$("#res").remove();
+			$('#announce').empty();
+			$(".autocomplete-suggestions").hide();
+			break;
+
+		case keys.RETURN:
+			if (highlighted) {
+				event.preventDefault();
+				event.stopPropagation();
+				return selectOption(highlighted);
+			}
+
+		case keys.UP:
+			event.preventDefault();
+			event.stopPropagation();
+			return moveUp(highlighted);
+			break;
+
+		case keys.DOWN:
+			event.preventDefault();
+			event.stopPropagation();
+			return moveDown(highlighted);
+			break;
+
+		default:
+			return;
+	}
+}
+
+function moveUp(highlighted) {
+	$("#search").removeAttr("aria-activedescendant");
+	if (highlighted) {
+		current = $('.highlight');
+		current.attr('aria-selected', false);
+		current.removeClass('highlight').prev('div').addClass('highlight');
+		current.prev('div').attr('aria-selected', true);
+		$("#search").attr("aria-activedescendant", current.prev('div').attr('id'));
+		highlighted = false;
+	}
+	else {
+		//Go back to the bottom of the list
+		current = $("#res").children().last('div');
+		current.addClass('highlight');
+		current.attr('aria-selected', true);
+		$("#search").attr("aria-activedescendant", current.attr('id'));
+	}
+}
+
+function moveDown(highlighted) {
+	$("#search").removeAttr("aria-activedescendant");
+	if (highlighted) {
+		current = $('.highlight');
+		current.attr('aria-selected', false);
+		current.removeClass('highlight').next('div').addClass('highlight');
+		current.next('div').attr('aria-selected', true);
+		$("#search").attr("aria-activedescendant", current.next('div').attr('id'));
+		highlighted = false;
+	}
+	else {
+		//Go back to the top of the list
+		current = $("#res").children().first('div');
+		current.addClass('highlight');
+		current.attr('aria-selected', true);
+		$("#search").attr("aria-activedescendant", current.attr('id'));
+	}
+}
+
+function selectOption(highlighted) {
+	if (highlighted) {
+		$("#search").removeAttr("aria-activedescendant");
+		$('#search').val($('.highlight').text());
+		$('#search').focus();
+		$("#res").remove();
+		$('#announce').empty();
+		$(".autocomplete-suggestions").hide();
+	} else {
+		return;
+	}
+}
+</script>
+
+</body>
+</html>

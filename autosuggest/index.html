@@ -108,10 +108,10 @@ input:focus {
 <div class="info">
 	<h2>Keyboard Interaction</h2>
 	<ul>
-		<li><strong>UP and DOWN:</strong> Cycles through auto-suggestions.</li>
-		<li><strong>ESC:</strong> Close the menu</li>
-		<li><strong>ENTER:</strong> Select the currently focused auto-suggestion and close the menu.</li>
-		<li><strong>TAB:</strong> Close the menu, leave what the user has typed in the textbox and move focus to the next focusable element.</li>
+		<li><strong>UP and DOWN:</strong> Cycles through options.</li>
+		<li><strong>ESC:</strong> Closes the options.</li>
+		<li><strong>ENTER:</strong> Selects the currently focused option and closes the menu.</li>
+		<li><strong>TAB:</strong> Closes the menu, leaves what the user has typed, and moves focus to the next focusable element on the page.</li>
 	</ul>
 	<h2>Screen-reader Interaction</h2>
 	<ul>
@@ -125,7 +125,7 @@ input:focus {
 		<li>Added variable for maximum number of options displayed.</li>
 		<li>Improved responsive layout, made widget relatively positioned.</li>
 		<li>Arrow up/down only selects the options (previously focused the input).</li>
-		<li>Added aria-expanded.</li>
+		<li>Added aria-expanded; changed aria-autocomplete from all to list.</li>
 		<li>Changed a few variable names in the Javascript.</li>
 		<li>Some Javascript optimization and formatting updates.</li>
 		<li>Improved no-Javascript use case.</li>
@@ -134,11 +134,9 @@ input:focus {
 	</ul>
 </div>
 
-
 <footer>
 	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
 </footer>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
@@ -214,7 +212,6 @@ function doSearch(locales, resultsLimit) {
 		if (number >= 1) {
 			$("#announce").text(number + " suggestions displayed. To navigate use up and down arrow keys.");
 		}
-
 	}
 	else {
 		$("#res").remove();
@@ -222,7 +219,6 @@ function doSearch(locales, resultsLimit) {
 		$("#search-autocomplete").hide();
 		$("#search").attr("aria-expanded","false");
 	}
-
 }
 
 function doKeypress(keys, event) {
@@ -280,7 +276,7 @@ function moveUp(highlighted) {
 		$("#search").attr("aria-activedescendant", current.prev('div').attr('id'));
 	}
 	else {
-		//Go back to the bottom of the list
+		// Go to bottom of list
 		removeCurrent();
 		current = $("#res").children().last('div');
 		current.addClass('highlight').attr('aria-selected', true);
@@ -298,7 +294,7 @@ function moveDown(highlighted) {
 		$("#search").attr("aria-activedescendant", current.next('div').attr('id'));
 	}
 	else {
-		//Go back to the top of the list
+		// Go to top of list
 		removeCurrent();
 		current = $("#res").children().first('div');
 		current.addClass('highlight').attr('aria-selected', true);
@@ -321,7 +317,8 @@ function selectOption(highlighted) {
 		$('#announce').empty();
 		$("#search-autocomplete").hide();
 		$("#search").attr("aria-expanded","false");
-	} else {
+	}
+	else {
 		return;
 	}
 }

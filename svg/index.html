@@ -49,6 +49,35 @@ body {
 h2 {
 	margin-top: 2em;
 }
+table {
+	border-collapse: collapse;
+}
+table,
+th,
+td {
+	margin: 10px 0;
+	border: solid 1px #333;
+	padding: 2px 4px;
+	font: 1em Helvetica;
+}
+th {
+	font-weight: normal;
+	font-size: 1.1em;
+	color: white;
+	background-color: #666;
+}
+th.title {
+	font-size: 0.9em;
+}
+td.pass {
+	background-color: hsla(184, 100%, 50%, 0.5);
+}
+td.fail {
+	background-color: hsla(336, 100%, 50%, 0.5);
+}
+td.unknown {
+	background-color: hsla(0, 0%, 72%, 0.5);
+}
 </style>
 
 </head>
@@ -92,6 +121,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -113,6 +172,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -136,6 +225,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: fail</li>
@@ -159,6 +278,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass (description outputs together with tile)</li>
 	<li>JAWS 17 + IE 11: pass (description outputs separately from title)</li>
@@ -174,6 +323,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;checkmark, image&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -189,6 +368,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;checkmark, image&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -216,6 +425,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Success! Your order went through.&quot;</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -243,6 +482,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, link&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -268,6 +537,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, link&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -293,6 +592,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;show warning, link&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -312,6 +641,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;passing information, link&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -339,6 +698,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, button&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: fail</li>
@@ -363,6 +752,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, button&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: fail</li>
@@ -387,6 +806,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;do test, button&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -405,6 +854,36 @@ h2 {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;checkmark, button&quot; or similar.</p>
 <p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>JAWS (17)</th>
+	<th>Voiceover (10.12.6)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>

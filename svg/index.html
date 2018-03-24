@@ -49,6 +49,44 @@ body {
 h2 {
 	margin-top: 2em;
 }
+
+
+  table {
+    border-collapse: collapse;
+  }
+
+    table,
+    th,
+    td {
+      margin: 10px 0;
+      border: solid 1px #333;
+      padding: 2px 4px;
+      font: 1em Helvetica;
+    }
+
+    th {
+      font-weight: normal;
+      font-size: 1.1em;
+      color: white;
+      background-color: gray;
+    }
+
+      th.title {
+        font-size: 0.9em;
+      }
+
+    td.pass {
+      background-color: hsla(184, 100%, 50%, 0.55);
+    }
+
+    td.fail {
+      background-color: hsla(336, 100%, 50%, 0.55);
+    }
+
+    td.unknown {
+      background-color: hsla(0, 0%, 72%, 0.55);
+    }
+
 </style>
 
 </head>
@@ -90,7 +128,35 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="fail">fail</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="pass">pass</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="fail">fail</td>
+      </tr>
+    </tbody>
+  </table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -110,7 +176,35 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -132,7 +226,36 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: fail</li>
@@ -154,7 +277,36 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass (description outputs together with tile)</li>
 	<li>JAWS 17 + IE 11: pass (description outputs separately from title)</li>
@@ -168,7 +320,36 @@ h2 {
 <p><img src="checkmark.svg" width="50" alt="checkmark"></p>
 <pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot;&gt;&lt;/p&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -182,7 +363,36 @@ h2 {
 <p><img src="checkmark.svg" width="50" alt="checkmark" role="img"></p>
 <pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot; role=&quot;img&quot;&gt;&lt;/p&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -197,18 +407,47 @@ h2 {
 	<svg width="40" height="40" aria-hidden="true">
 		<title>checkmark</title>
 		<use xlink:href="#icon-checkmark"></use>
-	</svg> 
+	</svg>
 	<p>Success! Your order went through.</p>
 </div>
 <pre><code>&lt;div&gt;
 	&lt;svg width=&quot;40&quot; height=&quot;40&quot; aria-hidden=&quot;true&quot;&gt;
 		&lt;title&gt;checkmark&lt;/title&gt;
 		&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;
-	&lt;/svg&gt; 
+	&lt;/svg&gt;
 	&lt;p&gt;Success! Your order went through.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -234,7 +473,36 @@ h2 {
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -258,7 +526,36 @@ h2 {
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -282,7 +579,36 @@ h2 {
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -300,7 +626,36 @@ h2 {
 	&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; height=&quot;50&quot; alt=&quot;passing information&quot;&gt;
 &lt;/a&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -326,7 +681,36 @@ h2 {
 	&lt;/svg&gt;
 &lt;/button&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: fail</li>
@@ -349,7 +733,36 @@ h2 {
 	&lt;/svg&gt;
 &lt;/button&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: fail</li>
@@ -372,7 +785,36 @@ h2 {
 	&lt;/svg&gt;
 &lt;/button&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -389,7 +831,36 @@ h2 {
 	&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; height=&quot;50&quot; alt=&quot;checkmark&quot;&gt;
 &lt;/button&gt;
 </code></pre>
-<p>Test results:</p>
+<h4>Test results</h4>
+  <table>
+    <thead>
+      <td></td>
+      <th>NVDA (2017.2)</th>
+      <th>JAWS (17)</th>
+      <th>Voiceover (OSX 10.12.5)</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Firefox (v53)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>IE (v11)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+      <tr>
+        <th>Safari (v?)</th>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+        <td class="unknown">unknown</td>
+      </tr>
+    </tbody>
+  </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>

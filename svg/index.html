@@ -49,44 +49,6 @@ body {
 h2 {
 	margin-top: 2em;
 }
-
-
-  table {
-    border-collapse: collapse;
-  }
-
-    table,
-    th,
-    td {
-      margin: 10px 0;
-      border: solid 1px #333;
-      padding: 2px 4px;
-      font: 1em Helvetica;
-    }
-
-    th {
-      font-weight: normal;
-      font-size: 1.1em;
-      color: white;
-      background-color: gray;
-    }
-
-      th.title {
-        font-size: 0.9em;
-      }
-
-    td.pass {
-      background-color: hsla(184, 100%, 50%, 0.55);
-    }
-
-    td.fail {
-      background-color: hsla(336, 100%, 50%, 0.55);
-    }
-
-    td.unknown {
-      background-color: hsla(0, 0%, 72%, 0.55);
-    }
-
 </style>
 
 </head>
@@ -128,6 +90,7 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;red square&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -157,6 +120,7 @@ h2 {
       </tr>
     </tbody>
   </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: fail</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -176,6 +140,7 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -205,6 +170,7 @@ h2 {
       </tr>
     </tbody>
   </table>
+
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: pass</li>
 	<li>JAWS 17 + IE 11: pass</li>
@@ -226,6 +192,7 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -277,6 +244,7 @@ h2 {
 	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -320,6 +288,7 @@ h2 {
 <p><img src="checkmark.svg" width="50" alt="checkmark"></p>
 <pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot;&gt;&lt;/p&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;checkmark, image&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -363,6 +332,7 @@ h2 {
 <p><img src="checkmark.svg" width="50" alt="checkmark" role="img"></p>
 <pre><code>&lt;p&gt;&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; alt=&quot;checkmark&quot; role=&quot;img&quot;&gt;&lt;/p&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;checkmark, image&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -418,6 +388,7 @@ h2 {
 	&lt;p&gt;Success! Your order went through.&lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;Success! Your order went through.&quot;</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -473,6 +444,7 @@ h2 {
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;Warning, link&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -526,6 +498,7 @@ h2 {
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;Warning, link&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -579,6 +552,7 @@ h2 {
 	&lt;/svg&gt;
 &lt;/a&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;show warning, link&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -626,6 +600,7 @@ h2 {
 	&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; height=&quot;50&quot; alt=&quot;passing information&quot;&gt;
 &lt;/a&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;passing information, link&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -681,6 +656,7 @@ h2 {
 	&lt;/svg&gt;
 &lt;/button&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;Warning, button&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -733,6 +709,7 @@ h2 {
 	&lt;/svg&gt;
 &lt;/button&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;Warning, button&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -785,6 +762,7 @@ h2 {
 	&lt;/svg&gt;
 &lt;/button&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;do test, button&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>
@@ -831,6 +809,7 @@ h2 {
 	&lt;img src=&quot;checkmark.svg&quot; width=&quot;50&quot; height=&quot;50&quot; alt=&quot;checkmark&quot;&gt;
 &lt;/button&gt;
 </code></pre>
+<p>Success criteria: screen reader outputs &quot;checkmark, button&quot; or similar.</p>
 <h4>Test results</h4>
   <table>
     <thead>

@@ -97,14 +97,18 @@ td.unknown {
 </ul>
 
 <p>Feel free to <a href="https://github.com/weboverhauls/demos/tree/master/svg">pitch in via GitHub</a>.</p>
-<p>Possible nuances and fixes (may not be implemented below):</p>
+<h2>Summary</h2>
+<ul>
+	<li>Support for inline content is getting better; Voiceover provides least support.</li>
+	<li>For links and buttons, all combinations support aria-label when SVG used as link and button content.</li>
+	<li>It's safe to use an IMG with an alt attribute as content for links and buttons.</li>
+</ul>
+<h2>Nuances and possible fixes (not implemented):</h2>
 <ul>
 	<li>Use focusable="false" for IE to ensure decorative SVG is not focusable and no double focus for links.</li>
-	<li>Older AT/browser combinations may not announce aria-describedby.</li>
-	<li>Safari bug (now fixed): IMG elements with an SVG src are ignored by VO despite valid alt attribute</li>
 	<li>Force focus in IE using tabindex=0</li>
+	<li>Safari bug (now fixed): IMG elements with an SVG src are ignored by VO despite valid alt attribute</li>
 </ul>
-
 
 <h2 id="content" tabindex="0">Content</h2>
 

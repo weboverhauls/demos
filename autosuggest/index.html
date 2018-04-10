@@ -57,7 +57,6 @@
 input:focus {
 	color: #000;
 	border: 2px solid #005499;
-	outline: none;
 }
 
 .autocomplete-suggestion {
@@ -69,6 +68,10 @@ input:focus {
 
 .autocomplete-selected {
 	background: #f0f0f0;
+}
+
+div[role=option][aria-selected=true]:after {
+	content: " •";
 }
 
 .visually-hidden {

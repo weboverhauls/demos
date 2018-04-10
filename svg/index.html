@@ -212,7 +212,101 @@ td.unknown {
 
 
 <section>
-<h3>Content | inline | with ARIA</h3>
+<h3>Content | inline | ARIA | role=img + aria-label</h3>
+<svg version="1.1" width="40" height="40" aria-label="red square" role="img">
+	<rect width="40" height="40" fill="#cc0000" />
+</svg>
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; aria-label=&quot;red square&quot; role=&quot;img&quot; &gt;
+	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+&lt;/svg&gt;
+</code></pre>
+<p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
+<p>Test results:</p>
+<table>
+<thead>
+<tr>
+	<td></td>
+	<th>NVDA (2017.2)</th>
+	<th>NVDA (2018.1.1)</th>
+	<th>JAWS (17)</th>
+	<th>JAWS (18)</th>
+	<th>VO (Mac 10.12.6)</th>
+	<th>VO (iOS 11.3)</th>
+	<th>TalkBack (Android 7.0)</th>
+</tr>
+<thead>
+<tbody>
+<tr>
+	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Firefox (59)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>IE (11)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (Mac 11.0.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Chrome (65.0)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+</tbody>
+</table>
+<p>Notes:</p>
+<ul>
+	<li>none</li>
+</ul>
+</section>
+
+
+<section>
+<h3>Content | inline | with ARIA | role=img + aria-labelledby</h3>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-0">
 	<title id="title-0">red square</title>
 	<rect width="40" height="40" fill="#cc0000" />
@@ -308,7 +402,7 @@ td.unknown {
 
 
 <section>
-<h3>Content | inline | title + description</h3>
+<h3>Content | inline | with ARIA | title + description</h3>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-1" aria-describedby="desc-1">
 	<title id="title-1">red square</title>
 	<desc id="desc-1">A plain red square defined at 40 pixels in length and height.</desc>
@@ -406,7 +500,7 @@ td.unknown {
 
 
 <section>
-<h3>Content | inline | title + description (2 values in aria-labelledby)</h3>
+<h3>Content | inline | with ARIA | title + description (2 values in aria-labelledby)</h3>
 <svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-2 desc-2">
 	<title id="title-2">red square</title>
 	<desc id="desc-2">A plain red square defined at 40 pixels in length and height.</desc>

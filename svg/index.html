@@ -4,7 +4,7 @@
      <meta charset="utf-8" />
      <title>SVG | Accessible Examples | test page</title>
      <meta name="description" content="Testing screen reader accessibility of SVG content on a web page." />
-     <meta name="keywords" content="svg, SVG, testing, accessibility, screen reader, html, web"
+     <meta name="keywords" content="svg, SVG, testing, accessibility, screen reader, html, web" />
      <meta name="author" content="Dennis Lembree" />
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,7 +19,6 @@ https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/
 -->
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position:absolute; width:0; height:0; display:none;" width="0" height="0">
->
 	<symbol id="warning" viewBox="0 0 18 18">
 		<path d="M9.9999375,12.4775 C9.9999375,12.7525 9.7749375,12.9775 9.4999375,12.9775 L8.4999375,12.9775 C8.2249375,12.9775 7.9999375,12.7525 7.9999375,12.4775 L7.9999375,7.4775 C7.9999375,7.2025 8.2249375,6.9775 8.4999375,6.9775 L9.4999375,6.9775 C9.7749375,6.9775 9.9999375,7.2025 9.9999375,7.4775 L9.9999375,12.4775 Z M9.9999375,15.4775 C9.9999375,15.7525 9.7749375,15.9775 9.4999375,15.9775 L8.4999375,15.9775 C8.2249375,15.9775 7.9999375,15.7525 7.9999375,15.4775 L7.9999375,14.4775 C7.9999375,14.2025 8.2249375,13.9775 8.4999375,13.9775 L9.4999375,13.9775 C9.7749375,13.9775 9.9999375,14.2025 9.9999375,14.4775 L9.9999375,15.4775 Z M17.9469375,17.2535 L9.4469375,0.2535 C9.2769375,-0.0845 8.7229375,-0.0845 8.5529375,0.2535 L0.0529375,17.2535 C-0.0240625,17.4095 -0.0170625,17.5925 0.0739375,17.7405 C0.1659375,17.8875 0.3269375,17.9775 0.4999375,17.9775 L17.4999375,17.9775 C17.6729375,17.9775 17.8339375,17.8875 17.9259375,17.7405 C18.0169375,17.5925 18.0239375,17.4095 17.9469375,17.2535 L17.9469375,17.2535 Z"/>
 	</symbol>
@@ -34,11 +33,11 @@ https://www.paciellogroup.com/blog/2013/12/using-aria-enhance-svg-accessibility/
 	</defs>
 </svg>
 
-<style type="text/css">
+<style>
 section {
 	border: 1px #ccc solid;
 	margin: 1em 0;
-	padding: 1em 2em;
+	padding: 1em;
 }
 pre {
     background-color: #efefef;
@@ -49,6 +48,9 @@ body {
 }
 h2 {
 	margin-top: 2em;
+}
+pre {
+	white-space: pre-wrap;
 }
 table {
 	border-collapse: collapse;
@@ -78,6 +80,10 @@ td.fail {
 }
 td.unknown {
 	background-color: hsla(0, 0%, 72%, 0.5);
+}
+.wrap-table {
+	width:100%; 
+	overflow:auto;
 }
 </style>
 
@@ -128,6 +134,8 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square&quot; or similar.</p>
 <p>Test results:</p>
+
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -140,7 +148,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -204,6 +212,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>For JAWS 17 and 18 with IE11, navigating with "g" (shortcut for images) does not locate the element.</li>
@@ -222,6 +231,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -234,7 +244,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -298,6 +308,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>NVDA 2018.1.1 + Firefox 59: outputs twice</li>
@@ -318,6 +329,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -330,7 +342,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -394,6 +406,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>For JAWS 17 and 18 with IE11, navigating with "g" (shortcut for images) does not locate the element.</li>
@@ -416,6 +429,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -428,7 +442,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -492,6 +506,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>JAWS 18 + Chrome 65: announces the title and indicates the presence of description but pressing JawsKey-alt-r to read it yields nothing.</li>
@@ -514,6 +529,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -526,7 +542,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -590,6 +606,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: description outputs together with tile</li>
@@ -606,6 +623,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;checkmark, image&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -618,7 +636,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -682,6 +700,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -696,6 +715,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;checkmark, image&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -708,7 +728,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -772,6 +792,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -798,6 +819,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Success! Your order went through.&quot;</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -810,7 +832,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -874,6 +896,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -900,6 +923,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, link&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -912,7 +936,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -976,6 +1000,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -1000,6 +1025,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, link&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1012,7 +1038,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1076,6 +1102,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>NVDA 2018.1.1 + Firefox 59: outputs "warning" twice</li>
@@ -1100,6 +1127,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;show warning, link&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1112,7 +1140,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1176,6 +1204,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -1194,6 +1223,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;passing information, link&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1206,7 +1236,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1270,6 +1300,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -1296,6 +1327,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, button&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1308,7 +1340,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1372,6 +1404,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -1395,6 +1428,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;Warning, button&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1407,7 +1441,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1471,6 +1505,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>NVDA 2018.1.1 + Firefox 59: outputs "warning" twice</li>
@@ -1494,6 +1529,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;do test, button&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1506,7 +1542,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1570,6 +1606,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>
@@ -1587,6 +1624,7 @@ td.unknown {
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;checkmark, button&quot; or similar.</p>
 <p>Test results:</p>
+<div class="wrap-table">
 <table>
 <thead>
 <tr>
@@ -1599,7 +1637,7 @@ td.unknown {
 	<th>VO (iOS 11.3)</th>
 	<th>TalkBack (Android 7.0)</th>
 </tr>
-<thead>
+</thead>
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
@@ -1663,6 +1701,7 @@ td.unknown {
 </tr>
 </tbody>
 </table>
+</div>
 <p>Notes:</p>
 <ul>
 	<li>none</li>

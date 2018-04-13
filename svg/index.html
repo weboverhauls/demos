@@ -312,7 +312,7 @@ td.unknown {
 <p>Notes:</p>
 <ul>
 	<li>NVDA 2018.1.1 + Firefox 59: outputs twice</li>
-	<li>JAWS 18 + IE 11: does not enable navigation by "g" to the image</li>
+	<li>JAWS 17 and 18 + IE 11: does not enable navigation by "g" to the image</li>
 </ul>
 </section>
 
@@ -410,7 +410,7 @@ td.unknown {
 </div>
 <p>Notes:</p>
 <ul>
-	<li>For JAWS 17 and 18 with IE11, navigating with "g" (shortcut for images) does not locate the element.</li>
+	<li>For JAWS 17 and 18 + IE11, navigating with "g" (shortcut for images) does not locate the element.</li>
 </ul>
 </section>
 
@@ -458,7 +458,7 @@ td.unknown {
 <tr>
 	<th>Firefox (59)</th>
 	<td class="unknown">unknown</td>
-	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -469,7 +469,7 @@ td.unknown {
 	<th>IE (11)</th>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
-	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -481,7 +481,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
-	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 </tr>
@@ -492,25 +492,28 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
-	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Chrome (65.0)</th>
 	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
-	<td class="unknown">unknown</td>
-	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
 </tr>
 </tbody>
 </table>
 </div>
 <p>Notes:</p>
 <ul>
-	<li>none</li>
+	<li>NVDA 2018.1.1 + Chrome 65: title output but not description</li>
+	<li>TalkBack Android 7.0 + Chrome 65: title output but not description</li>
+	<li>JAWS 17 + IE 11: description outputs separately from title (press arrow twice)</li>
+	<li>JAWS 17 + IE 11: navigating with "g" (shortcut for images) does not locate the element.</li>
 </ul>
 </section>
 
@@ -569,7 +572,7 @@ td.unknown {
 	<th>IE (11)</th>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
-	<td class="fail">fail</td>
+	<td class="pass">pass</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -611,6 +614,7 @@ td.unknown {
 <p>Notes:</p>
 <ul>
 	<li>JAWS 18 + Chrome 65: announces the title and indicates the presence of description but pressing JawsKey-alt-r to read it yields nothing.</li>
+	<li>JAWS 17 + IE 11: description outputs separately from title (press arrow twice)</li>
 </ul>
 </section>
 
@@ -712,7 +716,7 @@ td.unknown {
 <ul>
 	<li>NVDA 2017.2 + Firefox 53: description outputs together with tile</li>
 	<li>NVDA 2018.1.1 + Firefox 59: outputs twice (outputs "graphic" after first time)</li>
-	<li>JAWS 17 + IE 11: description outputs separately from title</li>
+	<li>JAWS 17 + IE 11: description outputs separately from title (press arrow twice)</li>
 </ul>
 </section>
 

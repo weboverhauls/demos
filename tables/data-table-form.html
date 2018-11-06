@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Accessible data table with form elements</title>
+<style>
+td, th {
+  padding: .5em;
+  border: 1px #ccc solid;
+}
+button {
+  margin: .5em 0 2em;
+}
+</style>
+</head>
+<body>
+
+<h1>Example of an accessible Data Table containing form elements.</h1>
+
+<form>
+<table>
+  <caption>Set Store Hours</caption>
+  <tr>
+    <td></td>
+    <th scope="col"><span id="mon">Monday</span></th>
+    <th scope="col"><span id="tue">Tuesday</span></th>
+    <th scope="col"><span id="wed">Wednesday</span></th>
+    <th scope="col"><span id="thu">Thursday</span></th>
+    <th scope="col"><span id="fri">Friday</span></th>
+  </tr>
+  <tr>
+    <th scope="row"><span id="am">9-11am</span></th>
+    <td>Closed</td>
+    <td>
+        <select name="tue-am" aria-labelledby="tue am">
+          <option>Open</option>
+          <option>Closed</option>
+          <option>Undetermined</option>
+        </select>
+    </td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>Closed</td>
+  </tr>
+  <tr>
+    <th scope="row"><span id="pm">1-5pm</span></th>
+    <td>Open</td>
+    <td>Open</td>
+    <td>Closed</td>
+    <td>
+        <select name="thu-pm" aria-labelledby="thu pm">
+          <option>Open</option>
+          <option>Closed</option>
+          <option>Undetermined</option>
+        </select>
+    </td>
+    <td>Closed</td>
+  </tr>
+</table>
+<button type="submit">Update Hours</button>
+</form>
+
+<footer>
+  <p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
+</body>
+</html>

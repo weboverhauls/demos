@@ -21,4 +21,6 @@ By Dennis Lembree @dennisl
 
 - [Tab Panel](https://weboverhauls.github.io/demos/tab-panel/)
 
+- [Table with form element](https://weboverhauls.github.io/demos/tables/data-table-form.html)
+
 - [Toggle Switch](https://weboverhauls.github.io/demos/toggle_switch/)

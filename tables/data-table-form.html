@@ -14,7 +14,14 @@ button {
 </head>
 <body>
 
-<h1>Example of an accessible Data Table containing form elements.</h1>
+<h1>Accessible data table with form elements</h1>
+<p>Below is an example of an accessible data table containing form elements (two select dropdowns).</p>
+<p>Notes:</p>
+<ul>
+  <li>Standard table markup is used such as <code>caption</code> and <code>TH</code> elements.</li>
+  <li>The inputs each contain an <code>aria-labelledby</code> attribute which points to the text in the row and column headers.</li>
+  <li>To ensure <code>aria-labelledby</code> functions in as many screen reader-browser combinations as possible, the referenced ID is on a <code>span</code> element within the header cell.</li>
+</ul>
 
 <form>
 <table>

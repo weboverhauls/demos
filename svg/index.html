@@ -104,7 +104,7 @@ td.unknown {
 
 <h2>Summary</h2>
 <ul>
-	<li>Support for inline content is getting better; Voiceover provides least support.</li>
+	<li>Support for inline content is getting better; Voiceover provides least support (although iOS 12.1 is much improved).</li>
 	<li>For links and buttons, all combinations except Narrator support aria-label when SVG used as link and button content.</li>
 	<li>For links and buttons, all combinations except Narrator support an IMG with an alt attribute as link and button content.</li>
 	<li>This use case passes all tests: Content | IMG | alt + role=img</li>
@@ -144,6 +144,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -152,6 +153,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -170,6 +172,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -177,6 +180,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -192,9 +196,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -212,11 +230,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -258,6 +278,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -265,6 +286,7 @@ td.unknown {
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -284,12 +306,14 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -306,6 +330,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
@@ -317,6 +342,19 @@ td.unknown {
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Chrome (65.0)</th>
@@ -326,11 +364,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -375,6 +415,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -383,6 +424,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -401,6 +443,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -408,6 +451,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -423,6 +467,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
@@ -434,6 +479,19 @@ td.unknown {
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Chrome (65.0)</th>
@@ -443,11 +501,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -493,6 +553,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -500,6 +561,7 @@ td.unknown {
 <tbody>
 <tr>
 	<th>Firefox (53)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -519,6 +581,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -526,6 +589,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -541,9 +605,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -561,11 +639,13 @@ td.unknown {
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -615,6 +695,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -623,6 +704,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -641,6 +723,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -648,6 +731,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -663,6 +747,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
@@ -674,6 +759,19 @@ td.unknown {
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Chrome (65.0)</th>
@@ -683,11 +781,13 @@ td.unknown {
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -734,6 +834,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -742,6 +843,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -760,6 +862,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -767,6 +870,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -782,6 +886,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
@@ -793,6 +898,19 @@ td.unknown {
 	<td class="fail">fail</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Chrome (65.0)</th>
@@ -802,11 +920,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -846,6 +966,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -854,6 +975,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -872,6 +994,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -879,6 +1002,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -894,9 +1018,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -914,11 +1052,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -956,6 +1096,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -964,6 +1105,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -982,6 +1124,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -989,6 +1132,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1004,9 +1148,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1024,11 +1182,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1078,6 +1238,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1086,6 +1247,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1104,6 +1266,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1111,6 +1274,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1126,9 +1290,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1146,11 +1324,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1200,6 +1380,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1208,6 +1389,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1226,6 +1408,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1233,6 +1416,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1248,9 +1432,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1268,11 +1466,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1321,6 +1521,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1329,6 +1530,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1347,6 +1549,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1354,6 +1557,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1369,9 +1573,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1389,11 +1607,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1443,6 +1663,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1451,6 +1672,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1469,6 +1691,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1476,6 +1699,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1491,9 +1715,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1511,11 +1749,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1557,6 +1797,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1565,6 +1806,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1583,6 +1825,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1590,6 +1833,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1605,9 +1849,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1625,11 +1883,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1680,6 +1940,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1688,6 +1949,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1706,6 +1968,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1713,6 +1976,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="fail">fail</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1728,9 +1992,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="fail">fail</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1748,11 +2026,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1799,6 +2079,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1807,6 +2088,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1825,6 +2107,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1832,6 +2115,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="fail">fail</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1847,9 +2131,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1867,11 +2165,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1919,6 +2219,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -1927,6 +2228,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1945,6 +2247,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -1952,6 +2255,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1967,9 +2271,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -1987,11 +2305,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -2032,6 +2352,7 @@ td.unknown {
 	<th>JAWS (18)</th>
 	<th>VO (Mac 10.12.6)</th>
 	<th>VO (iOS 11.3)</th>
+	<th>VO (iOS 12.1)</th>
 	<th>TalkBack (Android 7.0)</th>
 	<th>Narrator</th>
 </tr>
@@ -2040,6 +2361,7 @@ td.unknown {
 <tr>
 	<th>Firefox (53)</th>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -2058,6 +2380,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>IE (11)</th>
@@ -2065,6 +2388,7 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -2080,9 +2404,23 @@ td.unknown {
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Safari (iOS 11.3)</th>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="pass">pass</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
+</tr>
+<tr>
+	<th>Safari (iOS 12.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
@@ -2100,11 +2438,13 @@ td.unknown {
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
+	<td class="unknown">unknown</td>
 	<td class="pass">pass</td>
 	<td class="unknown">unknown</td>
 </tr>
 <tr>
 	<th>Edge (41.1)</th>
+	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>
 	<td class="unknown">unknown</td>

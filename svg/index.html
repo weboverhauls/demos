@@ -66,6 +66,10 @@ td.fail {
 td.unknown {
 	background-color: hsla(0, 0%, 72%, 0.5);
 }
+button { /* to fix iOS rendering issue */
+	width: 50px;
+	height: 50px;
+}
 .wrap-table {
 	width:100%; 
 	overflow:auto;
@@ -121,13 +125,13 @@ td.unknown {
 
 <section>
 <h3>Content | inline | title | no ARIA</h3>
-<svg version="1.1" width="40" height="40">
+<svg version="1.1" width="50" height="50">
 	<title>red square</title>
-	<rect width="40" height="40" fill="#cc0000" />
+	<rect width="50" height="50" fill="#cc0000" />
 </svg>
-<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 	&lt;title&gt;red square&lt;/title&gt;
-	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+	&lt;rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square&quot; or similar.</p>
@@ -258,11 +262,11 @@ td.unknown {
 
 <section>
 <h3>Content | inline | title | with ARIA | role=img + aria-label</h3>
-<svg version="1.1" width="40" height="40" aria-label="red square" role="img">
-	<rect width="40" height="40" fill="#cc0000" />
+<svg version="1.1" width="50" height="50" aria-label="red square" role="img">
+	<rect width="50" height="50" fill="#cc0000" />
 </svg>
-<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; aria-label=&quot;red square&quot; role=&quot;img&quot; &gt;
-	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;50&quot; height=&quot;50&quot; aria-label=&quot;red square&quot; role=&quot;img&quot; &gt;
+	&lt;rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
@@ -393,13 +397,13 @@ td.unknown {
 
 <section>
 <h3>Content | inline | title | with ARIA | role=img + aria-labelledby</h3>
-<svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-0">
+<svg version="1.1" width="50" height="50" role="img" aria-labelledby="title-0">
 	<title id="title-0">red square</title>
-	<rect width="40" height="40" fill="#cc0000" />
+	<rect width="50" height="50" fill="#cc0000" />
 </svg>
-<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; role=&quot;img&quot; aria-labelledby=&quot;title-0&quot;&gt;
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;50&quot; height=&quot;50&quot; role=&quot;img&quot; aria-labelledby=&quot;title-0&quot;&gt;
 	&lt;title id=&quot;title-0&quot;&gt;red square&lt;/title&gt;
-	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+	&lt;rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
 <p>Success criteria: screen reader outputs &quot;red square, image&quot; or similar.</p>
@@ -529,18 +533,18 @@ td.unknown {
 
 <section>
 <h3>Content | inline | title + description | no ARIA</h3>
-<svg version="1.1" width="40" height="40">
+<svg version="1.1" width="50" height="50">
 	<title>red square</title>
-	<desc>A plain red square defined at 40 pixels in length and height.</desc>
-	<rect width="40" height="40" fill="#cc0000" />
+	<desc>A plain red square defined at 50 pixels in length and height.</desc>
+	<rect width="50" height="50" fill="#cc0000" />
 </svg>
-<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 	&lt;title&gt;red square&lt;/title&gt;
-	&lt;desc&gt;A plain red square defined at 40 pixels length and height.&lt;/desc&gt;
-	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+	&lt;desc&gt;A plain red square defined at 50 pixels length and height.&lt;/desc&gt;
+	&lt;rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
+<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 50 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
 <div class="wrap-table">
 <table>
@@ -671,18 +675,18 @@ td.unknown {
 
 <section>
 <h3>Content | inline | with ARIA | title + description</h3>
-<svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-1" aria-describedby="desc-1">
+<svg version="1.1" width="50" height="50" role="img" aria-labelledby="title-1" aria-describedby="desc-1">
 	<title id="title-1">red square</title>
-	<desc id="desc-1">A plain red square defined at 40 pixels in length and height.</desc>
-	<rect width="40" height="40" fill="#cc0000" />
+	<desc id="desc-1">A plain red square defined at 50 pixels in length and height.</desc>
+	<rect width="50" height="50" fill="#cc0000" />
 </svg>
-<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; role=&quot;img&quot; aria-labelledby=&quot;title-1&quot; aria-describedby=&quot;desc-1&quot;&gt;
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;50&quot; height=&quot;50&quot; role=&quot;img&quot; aria-labelledby=&quot;title-1&quot; aria-describedby=&quot;desc-1&quot;&gt;
 	&lt;title id=&quot;title-1&quot;&gt;red square&lt;/title&gt;
-	&lt;desc id=&quot;desc-1&quot;&gt;A plain red square defined at 40 pixels length and height.&lt;/desc&gt;
-	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+	&lt;desc id=&quot;desc-1&quot;&gt;A plain red square defined at 50 pixels length and height.&lt;/desc&gt;
+	&lt;rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
+<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 50 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
 <div class="wrap-table">
 <table>
@@ -810,18 +814,18 @@ td.unknown {
 
 <section>
 <h3>Content | inline | with ARIA | title + description (2 values in aria-labelledby)</h3>
-<svg version="1.1" width="40" height="40" role="img" aria-labelledby="title-2 desc-2">
+<svg version="1.1" width="50" height="50" role="img" aria-labelledby="title-2 desc-2">
 	<title id="title-2">red square</title>
-	<desc id="desc-2">A plain red square defined at 40 pixels in length and height.</desc>
-	<rect width="40" height="40" fill="#cc0000" />
+	<desc id="desc-2">A plain red square defined at 50 pixels in length and height.</desc>
+	<rect width="50" height="50" fill="#cc0000" />
 </svg>
-<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;40&quot; height=&quot;40&quot; role=&quot;img&quot; aria-labelledby=&quot;title-2 desc-2&quot;&gt;
+<pre><code>&lt;svg version=&quot;1.1&quot; width=&quot;50&quot; height=&quot;50&quot; role=&quot;img&quot; aria-labelledby=&quot;title-2 desc-2&quot;&gt;
 	&lt;title id=&quot;title-2&quot;&gt;red square&lt;/title&gt;
-	&lt;desc id=&quot;desc-2&quot;&gt;A plain red square defined at 40 pixels length and height.&lt;/desc&gt;
-	&lt;rect width=&quot;40&quot; height=&quot;40&quot; fill=&quot;#cc0000&quot; /&gt;
+	&lt;desc id=&quot;desc-2&quot;&gt;A plain red square defined at 50 pixels length and height.&lt;/desc&gt;
+	&lt;rect width=&quot;50&quot; height=&quot;50&quot; fill=&quot;#cc0000&quot; /&gt;
 &lt;/svg&gt;
 </code></pre>
-<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 40 pixels length and height, image&quot; or similar.</p>
+<p>Success criteria: screen reader outputs &quot;red square, a plain red square defined at 50 pixels length and height, image&quot; or similar.</p>
 <p>Test results:</p>
 <div class="wrap-table">
 <table>
@@ -1211,14 +1215,14 @@ td.unknown {
 <section>
 <h3>Content | hide | duplicate visual text</h3>
 <div>
-	<svg width="40" height="40" aria-hidden="true">
+	<svg width="50" height="50" aria-hidden="true">
 		<title>checkmark</title>
 		<use xlink:href="#icon-checkmark"></use>
 	</svg> 
 	<p>Success! Your order went through.</p>
 </div>
 <pre><code>&lt;div&gt;
-	&lt;svg width=&quot;40&quot; height=&quot;40&quot; aria-hidden=&quot;true&quot;&gt;
+	&lt;svg width=&quot;50&quot; height=&quot;50&quot; aria-hidden=&quot;true&quot;&gt;
 		&lt;title&gt;checkmark&lt;/title&gt;
 		&lt;use xlink:href=&quot;#icon-checkmark&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt; 
@@ -1355,13 +1359,13 @@ td.unknown {
 <section>
 <h3>Link | Inline | title | no ARIA</h3>
 <a href="javascript:alert('Warning: you must rock!');">
-	<svg focusable="false" width="40" height="40">
+	<svg focusable="false" width="50" height="50">
 		<title>Warning</title>
 		<use xlink:href="#warning"></use>
 	</svg>
 </a>
 <pre><code>&lt;a href=&quot;javascript:alert('Warning: you must rock!');&quot;&gt;
-	&lt;svg focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;svg focusable=&quot;false&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 		&lt;title&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;
@@ -1496,13 +1500,13 @@ td.unknown {
 <section>
 <h3>Link | Inline | title | with ARIA</h3>
 <a href="javascript:alert('Warning: you must rock!');">
-	<svg role="img" aria-labelledby="title-3" focusable="false" width="40" height="40">
+	<svg role="img" aria-labelledby="title-3" focusable="false" width="50" height="50">
 		<title id="title-3">Warning</title>
 		<use xlink:href="#warning"></use>
 	</svg>
 </a>
 <pre><code>&lt;a href=&quot;javascript:alert('Warning: you must rock!');&quot;&gt;
-	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-3&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-3&quot; focusable=&quot;false&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 		&lt;title id=&quot;title-3&quot;&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;
@@ -1638,13 +1642,13 @@ td.unknown {
 <section>
 <h3>Link | Inline | title | aria-label</h3>
 <a href="javascript:alert('Warning: you must roll!');" aria-label="show warning">
-	<svg role="img" aria-labelledby="title-4" focusable="false" width="40" height="40">
+	<svg role="img" aria-labelledby="title-4" focusable="false" width="50" height="50">
 		<title id="title-4">Warning</title>
 		<use xlink:href="#warning"></use>
 	</svg>
 </a>
 <pre><code>&lt;a href=&quot;javascript:alert('Warning: you must roll!');&quot; aria-label=&quot;show warning&quot;&gt;
-	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-4&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-4&quot; focusable=&quot;false&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 		&lt;title id=&quot;title-4&quot;&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;
@@ -1915,13 +1919,13 @@ td.unknown {
 <section>
 <h3>Button | Inline | title | no ARIA</h3>
 <button onclick="alert('this is a warning')">
-	<svg focusable="false" width="40" height="40">
+	<svg focusable="false" width="50" height="50">
 		<title>Warning</title>
 		<use xlink:href="#warning"></use>
 	</svg>
 </button>
 <pre><code>&lt;button onclick=&quot;alert('this is a warning')&quot;&gt;
-	&lt;svg focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;svg focusable=&quot;false&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 		&lt;title&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;
@@ -2054,13 +2058,13 @@ td.unknown {
 <section>
 <h3>Button | Inline | title | with ARIA</h3>
 <button onclick="alert('this is another warning')">
-	<svg role="img" aria-labelledby="title-5" focusable="false" width="40" height="40">
+	<svg role="img" aria-labelledby="title-5" focusable="false" width="50" height="50">
 		<title id="title-5">Warning</title>
 		<use xlink:href="#warning"></use>
 	</svg>
 </button>
 <pre><code>&lt;button onclick=&quot;alert('this is another warning')&quot;&gt;
-	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-5&quot; focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;svg role=&quot;img&quot; aria-labelledby=&quot;title-5&quot; focusable=&quot;false&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 		&lt;title id=&quot;title-5&quot;&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;
@@ -2194,13 +2198,13 @@ td.unknown {
 <section>
 <h3>Button | Inline | aria-label</h3>
 <button aria-label="do test" onclick="alert('this is yet another warning')">
-	<svg focusable="false" width="40" height="40">
+	<svg focusable="false" width="50" height="50">
 		<title>Warning</title>
 		<use xlink:href="#warning"></use>
 	</svg>
 </button>
 <pre><code>&lt;button aria-label=&quot;do test&quot; onclick=&quot;alert('this is yet another warning')&quot;&gt;
-	&lt;svg focusable=&quot;false&quot; width=&quot;40&quot; height=&quot;40&quot;&gt;
+	&lt;svg focusable=&quot;false&quot; width=&quot;50&quot; height=&quot;50&quot;&gt;
 		&lt;title&gt;Warning&lt;/title&gt;
 		&lt;use xlink:href=&quot;#warning&quot;&gt;&lt;/use&gt;
 	&lt;/svg&gt;

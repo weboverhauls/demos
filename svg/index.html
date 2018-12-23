@@ -103,6 +103,7 @@ td.unknown {
 	<li>Feel free to <a href="https://github.com/weboverhauls/demos/tree/master/svg">contribute via GitHub</a>.</li>
 	<li>&quot;VO&quot; is used as an abbreviation for &quot;Voiceover&quot;.</li>
 	<li>Narrator testing was done on Win 10 OS build 16299.522.</li>
+	<li>For IE, the attribute focusable="false" should be added to the SVG element to ensure there's no double focus for links and buttons (implemented) and to ensure a decorative SVG is not focusable (not implemented).</li>
 </ul>
 
 <h2>Summary</h2>
@@ -112,12 +113,6 @@ td.unknown {
 	<li>For links and buttons, all combinations except Narrator support an IMG with an alt attribute as link and button content.</li>
 	<li>This use case passes all tests: Content | IMG | alt + role=img</li>
 	<li>JAWS 18 + IE 11 passed all tests! VO (Mac 10.14.2) + Safari (Mac 12.0.2) passed all but one.</li>
-</ul>
-<h2>Nuances and possible fixes (not implemented):</h2>
-<ul>
-	<li>Use focusable="false" for IE to ensure decorative SVG is not focusable and no double focus for links.</li>
-	<li>Force focus in IE using tabindex=0.</li>
-	<li>Safari bug (now fixed): IMG elements with an SVG src are ignored by VO despite valid alt attribute.</li>
 </ul>
 
 <h2 id="content" tabindex="0">Content</h2>

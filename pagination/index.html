@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Pagination - accessible design pattern</title>
+     <meta name="description" content="Example of a semantic and accessible pagination design pattern." />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+body {
+	font-size: 1.25em;
+}
+
+.pagination ul {
+  list-style: none;
+  padding: 0;
+}
+.pagination li {
+  display: inline-block;
+}
+.pagination a {
+  text-decoration: none;
+}
+.pagination a:hover, 
+.pagination a:focus {
+  text-decoration: underline;
+}
+.pag_item {
+  padding: .3rem .6rem;
+  border: 1px #666 solid;
+}
+.pag_item[aria-current="page"] {
+  background: #666;
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Accessible Pagination Example</h1>
+
+<nav class="pagination" aria-label="pagination" role="navigation">
+	<ul>
+		<li>
+			<a href="1.html" class="pag_item">Previous</a>
+		</li>
+		<li>
+			<a href="1.html" class="pag_item">1</a>
+		</li>
+		<li>
+			<span class="pag_item" aria-current="page">2</span>
+		</li>
+		<li>
+			<a href="3.html" class="pag_item">3</a>
+		</li>
+		<li>
+			<a href="3.html" class="pag_item">Next</a>
+		</li>
+	</ul>
+</nav>
+
+<footer>
+	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
+</body>
+</html>

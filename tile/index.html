@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Tile/Card - accessible web design patterns</title>
+     <meta name="description" content="Example of semantic and accessible tile (card) web design patterns." />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+body {
+	font-size: 1.1em;
+}
+.card-list {
+	/*display: flex;*/
+	margin: 0;
+	padding: 0;
+}
+.card-list::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card-list li {
+	position: relative;
+	/*display: flex;*/
+	list-style: none;
+	float: left;
+	margin: 0 .5rem .5rem 0;
+	padding: .5rem;
+	max-width: 15rem;
+	border: 2px #767676 solid;
+}
+.card-list li img {
+	width: 100%;
+}
+
+.card-minimal a,
+.card-light a,
+.card-heavy a {
+    text-decoration: none;
+}
+
+.card-minimal a::after,
+.card-light a::after,
+.card-heavy a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.card-minimal li:hover,
+.card-light li:hover,
+.card-heavy li:hover {
+	border: 2px #c00 solid;
+}
+
+.card-bio a:hover,
+.card-bio a:focus {
+    text-decoration: none;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<h1>Accessible Tile (Card) Examples</h1>
+
+<section aria-labelledby="notes">
+<h2 id="notes">Notes/goals</h2>
+<ul>
+	<li>Semantic markup and minimal classes.</li>
+	<li>No duplicate content.</li>
+	<li>One tab stop per card.</li>
+	<li>When requiring a heading, the heading is first.</li>
+</ul>
+</section>
+
+<section aria-labelledby="min-tile">
+<h2 id="min-tile">Minimal Tile</h2>
+<ul class="card-list card-minimal">
+	<li>
+		<div><img src="images/placeholder.png" alt="evil sith machine man"></div>
+		<div><a target="_blank" href="#">Darth Vader</a></div>
+	</li>
+	<li>
+		<div><img src="images/placeholder.png" alt="cute droid"></div>
+		<div><a target="_blank" href="#">R2D2</a></div>
+	</li>
+	<li>
+		<div><img src="images/placeholder.png" alt="little green jedi master"></div>
+		<div><a target="_blank" href="#">Yoda</a></div>
+	</li>
+</ul>
+</section>
+
+<section aria-labelledby="light-tile">
+<h2 id="light-tile">Light Tile</h2>
+<ul class="card-list card-light">
+	<li>
+		<a class="tile" href="http://www.foobar.com">
+			<img src="images/placeholder.png" alt="">
+			<h3>Darth Vader</h3>
+			<p>evil sith machine man</p>
+		</a>
+	</li>
+	<li>
+		<a class="tile" href="http://www.foobar.com">
+			<img src="images/placeholder.png" alt="">
+			<h3>R2D2</h3>
+			<p>cute droid</p>
+		</a>
+	</li>
+	<li>
+		<a class="tile" href="http://www.foobar.com">
+			<img src="images/placeholder.png" alt="">
+			<h3>Yoda</h3>
+			<p>little green jedi master</p>
+		</a>
+	</li>
+</ul>
+</section>
+
+<section aria-labelledby="heavy-tile">
+<h2 id="heavy-tile">Heavy Tile</h2>
+<ul class="card-list card-heavy">
+	<li>		
+		<img src="images/placeholder.png" alt="">
+		<h3><a class="tile" href="http://www.foobar.com">Darth Vader</a></h3>
+		<p>Lucas ipsum dolor sit amet c-3p0 darth gonk windu greedo boba wedge organa antilles. Organa moff windu jango darth hutt dagobah darth. Kit maul qui-gon amidala. Mandalorians boba ewok greedo solo mara. Kessel han yavin darth solo. Grievous lando fett luke. Kessel gamorrean moff sidious.</p>
+	</li>
+	<li>		
+		<img src="images/placeholder.png" alt="">
+		<h3><a class="tile" href="http://www.foobar.com">R2D2</a></h3>
+		<p>Organa darth moff windu. Hutt tatooine yoda darth. Kessel yoda solo lando jabba mandalore wampa. Leia mon dantooine solo coruscant. Luuke biggs jawa han organa darth solo coruscant. Kenobi jabba grievous yoda jango leia k-3po.</p>
+	</li>
+	<li>		
+		<img src="images/placeholder.png" alt="">
+		<h3><a class="tile" href="http://www.foobar.com">Yoda</a></h3>
+		<p>Maul dooku organa solo solo sebulba darth lars. Kit tusken raider binks anakin r2-d2 palpatine maul yoda. Bespin jade fisto secura. Jinn darth jango antilles aayla baba. Grievous lando fett luke. Palpatine hutt jar moff organa fisto naboo k-3po.</p>
+	</li>
+</ul>
+</section>
+
+<section aria-labelledby="bio-tile">
+<h2 id="bio-tile">Bio Tile</h2>
+<ul class="card-list card-bio">
+	<li>
+		<h3><a href="#">Darth Vader</a></h3>
+		<div><img src="images/placeholder.png" alt="evil sith machine man"></div>
+		<p>ruler of the dark side of the force</p>
+		<p><a href="mailto:darthvader@deathstar.com">darthvader@deathstar.com</a></p>
+	</li>
+	<li>
+		<h3><a href="#">R2D2</a></h3>
+		<div><img src="images/placeholder.png" alt="cute droid"></div>
+		<p>all-purpose utility robot</p>
+		<p><a href="mailto:R2D2@tatooine.com">R2D2@tatooine.com</a></p>
+	</li>
+	<li>
+		<h3><a href="#">Yoda</a></h3>
+		<div><img src="images/placeholder.png" alt="little green jedi master"></div>
+		<p>jedi council member, swamp-lover</p>
+		<p><a href="mailto:yoda@dagobah.com">yoda@dagobah.com</a></p>
+	</li>
+</ul>
+</section>
+
+<section aria-labelledby="resources">
+<h2 id="resources">Resources</h2>
+<ul>
+	<li>MIND Patterns http://ebay.github.io/mindpatterns/navigation/tile/index.html</li>
+	<li>A11y Style Guide https://a11y-style-guide.com/style-guide/section-cards.html</li>
+	<li>Inclusive Components https://inclusive-components.design/cards/</li>
+</ul>
+</section>	
+
+<footer>
+	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
+</body>
+</html>

@@ -53,8 +53,9 @@ html, body {
   text-decoration: none;
   padding: 1.5em 0 1.5em 2em;
 }
-#global-nav ul li a:hover, #global-nav ul li a:focus {
-  background-color: #474747;
+#global-nav ul li a:hover, 
+#global-nav ul li a:focus {
+  background-color: #666;
 }
 #global-nav ul li a:active {
   color: #9fbf00;
@@ -96,6 +97,14 @@ header[role=banner] .site-title a {
   text-decoration: none;
 }
 
+header a:focus,
+header #menu-button:focus {
+  outline: #ccc 1px dotted;
+}
+header #menu-button:focus {
+  background-color: #666;
+}
+
 #menu-button {
   background-color: #333;
   border: 0;
@@ -130,10 +139,10 @@ header[role=banner] .site-title a {
 }
 
 body.active #menu-button {
-  -moz-transform: translateX(-202px);
-  -ms-transform: translateX(-202px);
-  -webkit-transform: translateX(-202px);
-  transform: translateX(-202px);
+  -moz-transform: translateX(-204px);
+  -ms-transform: translateX(-204px);
+  -webkit-transform: translateX(-204px);
+  transform: translateX(-204px);
 }
 
 main, footer {

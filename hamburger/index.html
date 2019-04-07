@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Hamburger - slide out menu - accessible design pattern</title>
+     <meta name="description" content="Example of a semantic and accessible hamburger (slide-out) menu design pattern." />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+html, body {
+  font-family: Helvetica,sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#global-nav {
+  background-color: #333;
+  bottom: 0;
+  max-width: 220px;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  right: -220px;
+  width: 100%;
+  z-index: 0;
+  visibility: hidden;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.active #global-nav {
+  visibility: visible;
+  -moz-transform: translateX(-220px);
+  -ms-transform: translateX(-220px);
+  -webkit-transform: translateX(-220px);
+  transform: translateX(-220px);
+}
+#global-nav ul {
+  margin: 0;
+  padding: 1em 0 0;
+}
+#global-nav ul li {
+  border-bottom: 1px solid #474747;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+#global-nav ul li a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5em 0 1.5em 2em;
+}
+#global-nav ul li a:hover, #global-nav ul li a:focus {
+  background-color: #474747;
+}
+#global-nav ul li a:active {
+  color: #9fbf00;
+}
+
+#container {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  z-index: 1;
+}
+
+header[role=banner] {
+  background-color: #333;
+  box-shadow: -1px 3px 6px #13140F;
+  padding: 1em 0;
+  text-align: left;
+}
+header[role=banner] .inner-header {
+  position: relative;
+  padding: 0 1rem;
+}
+header[role=banner] .header-flex {
+  display: -webkit-flex;
+  display: flex;
+}
+header[role=banner] .site-title {
+  font-size: 2.5rem;
+  margin: 0.25em 0 0;
+}
+header[role=banner] .site-title a {
+  color: #eee;
+  text-shadow: 2px 2px 4px #13140F;
+  text-decoration: none;
+}
+
+#menu-button {
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  line-height: 1;
+  min-width: 47px;
+  margin: 0.5rem 0 auto auto;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  -moz-transition: all 300ms;
+  -o-transition: all 300ms;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+#menu-button span.menu-icon {
+  display: block;
+  pointer-events: none;
+  font-size: 3em;
+  text-shadow: 2px 2px 2px #333;
+}
+#menu-button span.menu-icon svg rect {
+  fill: #fff;
+}
+#menu-button span.menu-text {
+  display: block;
+  font-size: 1.15em;
+  margin-top: 0.5em;
+}
+
+body.active #menu-button {
+  -moz-transform: translateX(-220px);
+  -ms-transform: translateX(-220px);
+  -webkit-transform: translateX(-220px);
+  transform: translateX(-220px);
+}
+
+main, footer {
+  padding: 0 1rem;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap !important;
+}
+</style>
+</head>
+
+<body>
+
+
+<div id="container">
+  <header role="banner">
+    <div class="inner-header">
+      <div class="header-flex">
+        <h1 class="site-title">
+            <a href="#">Accessible Slide Menu</a>
+         </h1>
+        <button aria-controls="global-nav" id="menu-button">
+          <span class="menu-icon" aria-hidden="true">
+            <svg version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30'><rect width='30' height='5'/><rect y='24' width='30' height='5' /><rect y='12' width='30' height='5'/></svg>
+          </span>
+          <span class="menu-text">Menu</span>
+        </button>
+      </div>
+    </div>
+    <nav id="global-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Talks</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Accessible Hamburger (slide-out) Menu Example</h2>
+    <p>Heavily modified from this <a href="https://codepen.io/marcysutton/pen/JoQqVw">Codpen<a/> by Marcy Sutton.</p>
+  </main>
+</div>
+
+<footer>
+	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+var MS = {};
+
+MS.App = function () {
+
+  var ESCAPE_CODE = 27;
+
+  var navButton = $('#menu-button'),
+  navMenu = $('#global-nav');
+
+  function initApp() {
+    navMenu.on('keyup', handleKeyup);
+    navButton.on('click', handleClick);
+  }
+
+  function handleKeyup(event) {
+    if (event.keyCode === ESCAPE_CODE) {
+      document.body.classList.toggle('active');
+      navButton.attr('aria-expanded', 'false');
+      navButton.focus();
+    }
+  }
+
+  function handleClick(event) {
+    if (document.body.classList.contains('active')) {
+      document.body.classList.remove('active');
+      navButton.attr('aria-expanded', 'false');
+    } 
+    else {
+      document.body.classList.add('active');
+      navButton.attr('aria-expanded', 'true');
+    }
+  }
+
+  return {
+    init: function () {
+      initApp();
+    } };
+
+}();
+
+$(document).ready(function ($) {
+  new MS.App.init();
+});
+</script>
+
+</body>
+</html>

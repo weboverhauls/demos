@@ -207,6 +207,8 @@ MS.App = function () {
   function initApp() {
     navMenu.on('keyup', handleKeyup);
     navButton.on('click', handleClick);
+
+    navButton.attr('aria-expanded', 'false');
   }
 
   function handleKeyup(event) {

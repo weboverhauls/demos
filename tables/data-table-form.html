@@ -20,7 +20,7 @@ button {
 <ul>
   <li>Standard table markup is used such as <code>caption</code> and <code>TH</code> elements.</li>
   <li>The inputs each contain an <code>aria-labelledby</code> attribute which points to the text in the row and column headers.</li>
-  <li>To ensure <code>aria-labelledby</code> functions in as many screen reader-browser combinations as possible, the referenced ID is on a <code>span</code> element within the header cell.</li>
+  <li>This is a standard data table; scope attributes present to ensure support by older technology.</li>
 </ul>
 
 <form>
@@ -28,14 +28,14 @@ button {
   <caption>Set Store Hours</caption>
   <tr>
     <td></td>
-    <th scope="col"><span id="mon">Monday</span></th>
-    <th scope="col"><span id="tue">Tuesday</span></th>
-    <th scope="col"><span id="wed">Wednesday</span></th>
-    <th scope="col"><span id="thu">Thursday</span></th>
-    <th scope="col"><span id="fri">Friday</span></th>
+    <th scope="col" id="mon">Monday</th>
+    <th scope="col" id="tue">Tuesday</th>
+    <th scope="col" id="wed">Wednesday</th>
+    <th scope="col" id="thu">Thursday</th>
+    <th scope="col" id="fri">Friday</th>
   </tr>
   <tr>
-    <th scope="row"><span id="am">9-11am</span></th>
+    <th scope="row" id="am">9-11am</th>
     <td>Closed</td>
     <td>
         <select name="tue-am" aria-labelledby="tue am">
@@ -49,7 +49,7 @@ button {
     <td>Closed</td>
   </tr>
   <tr>
-    <th scope="row"><span id="pm">1-5pm</span></th>
+    <th scope="row" id="pm">1-5pm</th>
     <td>Open</td>
     <td>Open</td>
     <td>Closed</td>

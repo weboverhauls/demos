@@ -5,9 +5,9 @@
      <title>Accessible Chips</title>
      <meta name="description" content="Example of an accessible chips design pattern." />
      <meta name="author" content="Dennis Lembree" />
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style type="text/css">
+<style>
 #autocomplete-wrapper {
 	position: relative;
 }
@@ -70,6 +70,15 @@ input:focus {
 	clip: rect(1px 1px 1px 1px);
 }
 
+#selectedCities li {
+	display: inline-block;
+	list-style: none;
+	margin: .25rem .35rem;
+	padding: .3rem;
+	border-radius: .25rem;
+	background-color: #ccc;
+}
+
 /* FOR DEMO LAYOUT/DISPLAY ONLY */
 * {
 	font-family: "Serif";
@@ -88,7 +97,7 @@ input:focus {
 <p>Based on the <a href="https://weboverhauls.github.io/demos/autosuggest/">autosuggest demo</a>.</p>
 
 <section id="autocomplete-wrapper" aria-label="select cities">
-	<div id="announce" class="visually-hidden" aria-live="assertive"></div>
+	<div id="announce" class="visually-hidden" aria-live="polite"></div>
 
 	<div id="searchfield">
 		<form id="frmAddCity">

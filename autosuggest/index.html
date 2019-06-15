@@ -20,8 +20,14 @@
 	display: none;
 }
 
-#res div:hover,
-#res div.highlight {
+#res {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#res li:hover,
+#res li.highlight {
 	background: #110D3B;
 	color: #FFF;
 }
@@ -54,7 +60,8 @@ input:focus {
 }
 
 .autocomplete-suggestion {
-	padding: .5rem .25rem;
+	margin: 0;
+	padding: .5rem;
 	font-size: 1.35rem;
 	white-space: nowrap;
 	overflow: hidden;
@@ -65,7 +72,7 @@ input:focus {
 	background: #f0f0f0;
 }
 
-/*div[role=option][aria-selected=true]:after {
+/*li[role=option][aria-selected=true]:after {
 	content: " •";
 }*/
 
@@ -183,13 +190,13 @@ function doSearch(locales, resultsLimit) {
 			$("#res").remove();
 			$('#announce').empty();
 			$("#search-autocomplete").show();
-			$("#search-autocomplete").append('<div id="res" role="listbox" tabindex="-1"></div>');
+			$("#search-autocomplete").append('<ul id="res" role="listbox" tabindex="-1"></ul>');
 			$("#search").attr("aria-expanded","true");
 			counter = 1;
 		}
 
 		//Bind click event to list elements in results
-		$("#res").on("click", "div", function() {
+		$("#res").on("click", "li", function() {
 			$("#search").val($(this).text());
 			$("#res").remove();
 			$('#announce').empty();
@@ -203,7 +210,7 @@ function doSearch(locales, resultsLimit) {
 		//Add results to the list
 		for (term in results) {
 			if (counter <= resultsLimit) {
-				$("#res").append("<div role='option' tabindex='-1' class='autocomplete-suggestion' id='suggestion-" + counter + "'>" + results[term] + "</div>");
+				$("#res").append("<li role='option' tabindex='-1' class='autocomplete-suggestion' id='suggestion-" + counter + "'>" + results[term] + "</li>");
 				counter = counter + 1;
 			}
 		}
@@ -222,7 +229,7 @@ function doSearch(locales, resultsLimit) {
 
 function doKeypress(keys, event) {
 	var highlighted = false;
-	highlighted = $('#res').children('div').hasClass('highlight');
+	highlighted = $('#res').children('li').hasClass('highlight');
 	switch (event.which) {
 
 		case keys.ESC:
@@ -269,15 +276,15 @@ function moveUp(highlighted) {
 	$("#search").removeAttr("aria-activedescendant");
 
 	// if highlighted exists and if the highlighted item is not the first option
-	if (highlighted && !$("#res").children().first('div').hasClass('highlight')) {
+	if (highlighted && !$("#res").children().first('li').hasClass('highlight')) {
 		removeCurrent();
-		current.prev('div').addClass('highlight').attr('aria-selected', true);
-		$("#search").attr("aria-activedescendant", current.prev('div').attr('id'));
+		current.prev('li').addClass('highlight').attr('aria-selected', true);
+		$("#search").attr("aria-activedescendant", current.prev('li').attr('id'));
 	}
 	else {
 		// Go to bottom of list
 		removeCurrent();
-		current = $("#res").children().last('div');
+		current = $("#res").children().last('li');
 		current.addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.attr('id'));
 	}
@@ -287,15 +294,15 @@ function moveDown(highlighted) {
 	$("#search").removeAttr("aria-activedescendant");
 
 	// if highlighted exists and if the highlighted item is not the last option
-	if (highlighted && !$("#res").children().last('div').hasClass('highlight')) {
+	if (highlighted && !$("#res").children().last('li').hasClass('highlight')) {
 		removeCurrent();
-		current.next('div').addClass('highlight').attr('aria-selected', true);
-		$("#search").attr("aria-activedescendant", current.next('div').attr('id'));
+		current.next('li').addClass('highlight').attr('aria-selected', true);
+		$("#search").attr("aria-activedescendant", current.next('li').attr('id'));
 	}
 	else {
 		// Go to top of list
 		removeCurrent();
-		current = $("#res").children().first('div');
+		current = $("#res").children().first('li');
 		current.addClass('highlight').attr('aria-selected', true);
 		$("#search").attr("aria-activedescendant", current.attr('id'));
 	}

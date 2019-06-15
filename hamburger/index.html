@@ -167,7 +167,6 @@ main, footer {
 
 <body>
 
-
 <div id="container">
   <header role="banner">
     <div class="inner-header">
@@ -218,6 +217,7 @@ MS.App = function () {
     navButton.on('click', handleClick);
 
     navButton.attr('aria-expanded', 'false');
+    navButton.on('keyup', handleKeyup);
   }
 
   function handleKeyup(event) {

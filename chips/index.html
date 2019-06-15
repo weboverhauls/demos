@@ -200,7 +200,7 @@ function doSearch(locales, resultsLimit) {
 			$("#res").remove();
 			$('#announce').empty();
 			$("#search-autocomplete").show();
-			$("#search-autocomplete").append('<ul id="res" role="listbox" tabindex="-1"></ul>');
+			$("#search-autocomplete").append('<ul id="res" role="listbox"></ul>');
 			$("#search").attr("aria-expanded","true");
 			counter = 1;
 		}
@@ -220,7 +220,7 @@ function doSearch(locales, resultsLimit) {
 		//Add results to the list
 		for (term in results) {
 			if (counter <= resultsLimit) {
-				$("#res").append("<li role='option' tabindex='-1' class='autocomplete-suggestion' id='suggestion-" + counter + "'>" + results[term] + "</li>");
+				$("#res").append("<li role='option' class='autocomplete-suggestion' id='suggestion-" + counter + "'>" + results[term] + "</li>");
 				counter = counter + 1;
 			}
 		}

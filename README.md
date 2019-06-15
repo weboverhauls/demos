@@ -1,10 +1,12 @@
 # Demos
 
-Examples of web development with accessibility in mind.
+Examples of web development/web design patterns with accessibility in mind.
 
 By Dennis Lembree @dennisl
 
 - [Autosuggest select dropdown](https://weboverhauls.github.io/demos/autosuggest/)
+
+- [Chips (with autosuggest)](https://weboverhauls.github.io/demos/chips/)
 
 - [Interactive elements within grid layout](https://weboverhauls.github.io/demos/grid/)
 

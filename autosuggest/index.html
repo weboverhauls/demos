@@ -12,6 +12,10 @@
 	position: relative;
 }
 
+#search-combobox {
+	display: inline-block;
+}
+
 #search-autocomplete {
 	position: absolute;
 	border: 1px solid #999;
@@ -102,8 +106,10 @@ input:focus {
 
 	<div id="searchfield">
 		<form>
-			<label for="search">City</label>
-			<input id="search" type="text" autocomplete="off">
+			<div id="search-combobox">
+				<label for="search" id="search-label">City</label>
+				<input id="search" type="text" autocomplete="off">
+			</div>
 			<div id="search-autocomplete"></div>
 			<input id="submit" type="submit" value="Search" />
 		</form>
@@ -136,6 +142,8 @@ input:focus {
 		<li>Improved no-Javascript use case.</li>
 		<li>Changed options to U.S. cities.</li>
 		<li>For better visual affordance in Windows HCM: returned focus ring<del>; added bullet to selected option</del>.</li>
+		<li>For autocomplete options, changed from Divs to UL/LI.</li>
+		<li>Moved from ARIA 1.0 version of combobox to 1.1 version (where role="combobox" is placed on a container)</li>
 		<li>TO DO: Remove jQuery dependency.</li>
 	</ul>
 </div>
@@ -147,10 +155,13 @@ input:focus {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
-		$("#search").attr("role","combobox")
-			.attr("aria-owns","res")
-			.attr("aria-autocomplete","list")
+		$("#search-combobox").attr("role","combobox")
+			.attr("aria-owns","search")
+			.attr("aria-haspopup","listbox")
 			.attr("aria-expanded","false");
+		
+		$("#search").attr("aria-controls","res")
+			.attr("aria-autocomplete","list");
 
 		var resultsLimit = 5;
 		var locales = ["Aberdeen", "Abilene", "Akron", "Albany", "Albuquerque", "Alexandria", "Allentown", "Amarillo", "Anaheim", "Anchorage", "Ann Arbor", "Antioch", "Apple Valley", "Appleton", "Arlington", "Arvada", "Asheville", "Athens", "Atlanta", "Atlantic City", "Augusta", "Aurora", "Austin", "Bakersfield", "Baltimore", "Barnstable", "Baton Rouge", "Beaumont", "Bel Air", "Bellevue", "Berkeley", "Bethlehem", "Billings", "Birmingham", "Bloomington", "Boise", "Boise City", "Bonita Springs", "Boston", "Boulder", "Bradenton", "Bremerton", "Bridgeport", "Brighton", "Brownsville", "Bryan", "Buffalo", "Burbank", "Burlington", "Cambridge", "Canton", "Cape Coral", "Carrollton", "Cary", "Cathedral City", "Cedar Rapids", "Champaign", "Chandler", "Charleston", "Charlotte", "Chattanooga", "Chesapeake", "Chicago", "Chula Vista", "Cincinnati", "Clarke County", "Clarksville", "Clearwater", "Cleveland", "College Station", "Colorado Springs", "Columbia", "Columbus", "Concord", "Coral Springs", "Corona", "Corpus Christi", "Costa Mesa", "Dallas", "Daly City", "Danbury", "Davenport", "Davidson County", "Dayton", "Daytona Beach", "Deltona", "Denton", "Denver", "Des Moines", "Detroit", "Downey", "Duluth", "Durham", "El Monte", "El Paso", "Elizabeth", "Elk Grove", "Elkhart", "Erie", "Escondido", "Eugene", "Evansville", "Fairfield", "Fargo", "Fayetteville", "Fitchburg", "Flint", "Fontana", "Fort Collins", "Fort Lauderdale", "Fort Smith", "Fort Walton Beach", "Fort Wayne", "Fort Worth", "Frederick", "Fremont", "Fresno", "Fullerton", "Gainesville", "Garden Grove", "Garland", "Gastonia", "Gilbert", "Glendale", "Grand Prairie", "Grand Rapids", "Grayslake", "Green Bay", "GreenBay", "Greensboro", "Greenville", "Gulfport-Biloxi", "Hagerstown", "Hampton", "Harlingen", "Harrisburg", "Hartford", "Havre de Grace", "Hayward", "Hemet", "Henderson", "Hesperia", "Hialeah", "Hickory", "High Point", "Hollywood", "Honolulu", "Houma", "Houston", "Howell", "Huntington", "Huntington Beach", "Huntsville", "Independence", "Indianapolis", "Inglewood", "Irvine", "Irving", "Jackson", "Jacksonville", "Jefferson", "Jersey City", "Johnson City", "Joliet", "Kailua", "Kalamazoo", "Kaneohe", "Kansas City", "Kennewick", "Kenosha", "Killeen", "Kissimmee", "Knoxville", "Lacey", "Lafayette", "Lake Charles", "Lakeland", "Lakewood", "Lancaster", "Lansing", "Laredo", "Las Cruces", "Las Vegas", "Layton", "Leominster", "Lewisville", "Lexington", "Lincoln", "Little Rock", "Long Beach", "Lorain", "Los Angeles", "Louisville", "Lowell", "Lubbock", "Macon", "Madison", "Manchester", "Marina", "Marysville", "McAllen", "McHenry", "Medford", "Melbourne", "Memphis", "Merced", "Mesa", "Mesquite", "Miami", "Milwaukee", "Minneapolis", "Miramar", "Mission Viejo", "Mobile", "Modesto", "Monroe", "Monterey", "Montgomery", "Moreno Valley", "Murfreesboro", "Murrieta", "Muskegon", "Myrtle Beach", "Naperville", "Naples", "Nashua", "Nashville", "New Bedford", "New Haven", "New London", "New Orleans", "New York", "New York City", "Newark", "Newburgh", "Newport News", "Norfolk", "Normal", "Norman", "North Charleston", "North Las Vegas", "North Port", "Norwalk", "Norwich", "Oakland", "Ocala", "Oceanside", "Odessa", "Ogden", "Oklahoma City", "Olathe", "Olympia", "Omaha", "Ontario", "Orange", "Orem", "Orlando", "Overland Park", "Oxnard", "Palm Bay", "Palm Springs", "Palmdale", "Panama City", "Pasadena", "Paterson", "Pembroke Pines", "Pensacola", "Peoria", "Philadelphia", "Phoenix", "Pittsburgh", "Plano", "Pomona", "Pompano Beach", "Port Arthur", "Port Orange", "Port Saint Lucie", "Port St. Lucie", "Portland", "Portsmouth", "Poughkeepsie", "Providence", "Provo", "Pueblo", "Punta Gorda", "Racine", "Raleigh", "Rancho Cucamonga", "Reading", "Redding", "Reno", "Richland", "Richmond", "Richmond County", "Riverside", "Roanoke", "Rochester", "Rockford", "Roseville", "Round Lake Beach", "Sacramento", "Saginaw", "Saint Louis", "Saint Paul", "Saint Petersburg", "Salem", "Salinas", "Salt Lake City", "San Antonio", "San Bernardino", "San Buenaventura", "San Diego", "San Francisco", "San Jose", "Santa Ana", "Santa Barbara", "Santa Clara", "Santa Clarita", "Santa Cruz", "Santa Maria", "Santa Rosa", "Sarasota", "Savannah", "Scottsdale", "Scranton", "Seaside", "Seattle", "Sebastian", "Shreveport", "Simi Valley", "Sioux City", "Sioux Falls", "South Bend", "South Lyon", "Spartanburg", "Spokane", "Springdale", "Springfield", "St. Louis", "St. Paul", "St. Petersburg", "Stamford", "Sterling Heights", "Stockton", "Sunnyvale", "Syracuse", "Tacoma", "Tallahassee", "Tampa", "Temecula", "Tempe", "Thornton", "Thousand Oaks", "Toledo", "Topeka", "Torrance", "Trenton", "Tucson", "Tulsa", "Tuscaloosa", "Tyler", "Utica", "Vallejo", "Vancouver", "Vero Beach", "Victorville", "Virginia Beach", "Visalia", "Waco", "Warren", "Washington", "Waterbury", "Waterloo", "West Covina", "West Valley City", "Westminster", "Wichita", "Wilmington", "Winston", "Winter Haven", "Worcester", "Yakima", "Yonkers", "York", "Youngstown"];
@@ -190,8 +201,8 @@ function doSearch(locales, resultsLimit) {
 			$("#res").remove();
 			$('#announce').empty();
 			$("#search-autocomplete").show();
-			$("#search-autocomplete").append('<ul id="res" role="listbox" tabindex="-1"></ul>');
-			$("#search").attr("aria-expanded","true");
+			$("#search-autocomplete").append('<ul id="res" role="listbox" aria-labelledby="search-label" tabindex="-1"></ul>');
+			$("#search-combobox").attr("aria-expanded","true");
 			counter = 1;
 		}
 
@@ -201,7 +212,7 @@ function doSearch(locales, resultsLimit) {
 			$("#res").remove();
 			$('#announce').empty();
 			$("#search-autocomplete").hide();
-			$("#search").attr("aria-expanded","false");
+			$("#search-combobox").attr("aria-expanded","false");
 			$("#search").removeAttr("aria-activedescendant");
 			$('#search').focus();
 			counter = 1;
@@ -223,7 +234,7 @@ function doSearch(locales, resultsLimit) {
 		$("#res").remove();
 		$('#announce').empty();
 		$("#search-autocomplete").hide();
-		$("#search").attr("aria-expanded","false");
+		$("#search-combobox").attr("aria-expanded","false");
 	}
 }
 
@@ -237,7 +248,7 @@ function doKeypress(keys, event) {
 			$("#res").remove();
 			$('#announce').empty();
 			$("#search-autocomplete").hide();
-			$("#search").attr("aria-expanded","false");
+			$("#search-combobox").attr("aria-expanded","false");
 			break;
 
 		case keys.TAB:
@@ -245,7 +256,7 @@ function doKeypress(keys, event) {
 			$("#res").remove();
 			$('#announce').empty();
 			$("#search-autocomplete").hide();
-			$("#search").attr("aria-expanded","false");
+			$("#search-combobox").attr("aria-expanded","false");
 			break;
 
 		case keys.RETURN:
@@ -322,7 +333,7 @@ function selectOption(highlighted) {
 		$("#res").remove();
 		$('#announce').empty();
 		$("#search-autocomplete").hide();
-		$("#search").attr("aria-expanded","false");
+		$("#search-combobox").attr("aria-expanded","false");
 	}
 	else {
 		return;

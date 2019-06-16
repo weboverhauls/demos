@@ -7,7 +7,7 @@
      <meta name="author" content="Dennis Lembree" />
      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style type="text/css">
+<style>
 body, button, input {
 	font-size: 1.25em;
 }
@@ -53,10 +53,12 @@ toggleBtn.addEventListener('click', function (event) {
 
 	// Check if the password should be shown or hidden
 	if (pwInput.type=="password") {
+		// Modify password input type, label & aria-label
 		pwInput.type = 'text';
 		toggleBtn.textContent = "Hide";
 		toggleBtn.setAttribute("aria-label","Hide");
 	} else {
+		// Modify password input type, label & aria-label
 		pwInput.type = 'password';
 		toggleBtn.textContent = "Show";
 		toggleBtn.setAttribute("aria-label","Show");

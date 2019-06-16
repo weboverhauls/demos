@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Breadcrumb - accessible design pattern</title>
+     <meta name="description" content="Example of a semantic and accessible Breadcrumb design pattern." />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+.breadcrumbs ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.breadcrumbs li {
+	margin: 0;
+	display: inline-block;
+}
+.breadcrumbs li:not(:last-child)::after {
+	content: ' / ';
+}
+
+/* LAYOUT ONLY */
+body {
+	font-size: 1.25em;
+}
+#wrapper {
+	margin-bottom: 5rem;
+}
+nav {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px #ccc solid;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+<h1>Accessible Breadcrumb Example</h1>
+
+<nav class="breadcrumbs" aria-label="You are here">
+	<ul class="items">
+		<li>
+			<a href="/">Home</a>
+		</li>
+		<li>
+			<a href="/products">Products</a>
+		</li>
+		<li aria-current="true">
+			Guitars
+		</li>
+	</ul>
+</nav>
+
+</div>
+
+<footer>
+	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>
+</footer>
+
+</body>
+</html>

@@ -6,6 +6,8 @@ By Dennis Lembree @dennisl
 
 - [Autosuggest select dropdown](https://weboverhauls.github.io/demos/autosuggest/)
 
+- [Breadcrumbs](https://weboverhauls.github.io/demos/breadcrumb/)
+
 - [Chips (with autosuggest)](https://weboverhauls.github.io/demos/chips/)
 
 - [Interactive elements within grid layout](https://weboverhauls.github.io/demos/grid/)

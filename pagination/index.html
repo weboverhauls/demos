@@ -34,10 +34,16 @@ body {
   background: #666;
   color: #fff;
 }
+
+main {
+	margin-bottom: 5rem;
+}
 </style>
 </head>
 
 <body>
+
+<main>
 
 <h1>Accessible Pagination Example</h1>
 
@@ -60,6 +66,17 @@ body {
 		</li>
 	</ul>
 </nav>
+
+<div class="info">
+	<h2>Notes</h2>
+	<ul>
+		<li>A labeled Nav element used as container of pagination content. Nav element is subjective; usage also may depend on the number of other nav elements on page (could use section instead).</li>
+		<li>Unordered list used for pagination items.</li>
+		<li>Current item is not linked and marked with aria-current.</li>
+	</ul>
+</div>
+
+</main>
 
 <footer>
 	<p><small>Return to <a href="https://weboverhauls.github.io/demos/">Web Overhauls Demos</a></small></p>

@@ -222,7 +222,7 @@ MS.App = function () {
 
   function handleKeyup(event) {
     if (event.keyCode === ESCAPE_CODE) {
-      document.body.classList.toggle('active');
+      document.body.classList.remove('active');
       navButton.attr('aria-expanded', 'false');
       navButton.focus();
     }

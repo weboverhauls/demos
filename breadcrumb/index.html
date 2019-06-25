@@ -19,7 +19,7 @@ nav {
     padding: 1rem;
     border: 1px #ccc solid;
 }
-nav h3 {
+nav h2 {
 	font-size: 1rem;
 	font-weight: normal;
 	margin: 0;
@@ -46,8 +46,8 @@ nav h3 {
 
 <h1>Accessible Breadcrumb Example</h1>
 
-<nav class="breadcrumbs" aria-label="You are here">
-	<h3>You are here:</h3>
+<nav class="breadcrumbs" aria-labelledby="bread-head">
+	<h2 id="bread-head">You are here:</h2>
 	<ul class="items">
 		<li>
 			<a href="/">Home</a>
@@ -64,11 +64,12 @@ nav h3 {
 <div class="info">
 	<h2>Notes</h2>
 	<ul>
-		<li>Nav element used as container of breadcrumb content. This is subjective; usage also may depend on the number of other nav elements on page.</li>
-		<li>Visible "You are here" text used and marked up as heading. Providing this text is subjective; same verbiage used as label on nav element (via aria-label).</li>
-		<li>Unordered list used for breadcrumb items. Some folks argue that *ordered* list is appropriate but I disagree.</li>
-		<li>Last item is not linked as it is the current page.</li>
-		<li>aria-current on current item (last in list).</li>
+		<li>Nav element used as container of breadcrumb content. This is subjective. And use of the Nav element may also depend on the number of other nav elements on page (could use section instead).</li>
+		<li>Visible "You are here" text is present and marked up as heading. The nav is labeled with this text via aria-labelledby.</li>
+		<li>Providing the visual "You are here" text is subjective; aria-label could be implemented instead.</li>
+		<li>An unordered list is used for breadcrumb items. This is subjective; some folks argue that *ordered* list is appropriate but I disagree. Other folks say no list is needed at all (which I'm OK with).</li>
+		<li>Last item is not linked as it is the current page (and for visual affordance).</li>
+		<li>aria-current on current item (for non-visual affordance).</li>
 	</ul>
 </div>
 

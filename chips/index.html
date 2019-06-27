@@ -147,7 +147,6 @@ button {
 		<li>Enter a U.S. city name via typing/autosuggest.</li>
 		<li>Press the Add City button.</li>
 		<li>City appears in list below; press remove/X to remove selection.</li>
-		<li>TO DO: remove "none" when selections made. 
 	</ol>
 </div>
 
@@ -348,13 +347,25 @@ function selectOption(highlighted) {
 }
 
 function removeMe(el) {
+	// Remove list item
 	$(el).parent().remove();
 	var theName = $(el).parent().text().replace(" X", "");
 	$("#announce").text(theName + " removed from list");
 	$("#search").focus();
+
+	// Return "none" if no list items exist
+	if($('#selectedCities ul').children().length < 1) {
+		$("#selectedCities ul").append("<li>None</li>");
+	}
 }
 
 function addCity() {
+	// Remove "none" if it exists
+	if ($("#selectedCities li:eq(0)").text()=="None") {
+		$("#selectedCities li:eq(0)").remove();
+	}
+
+	// Add the city
 	var theName = $('#search').val();
 	if (theName=="") {
 		alert("Please enter a city name.");

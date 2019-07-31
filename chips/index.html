@@ -360,18 +360,21 @@ function removeMe(el) {
 }
 
 function addCity() {
+	var theName = $('#search').val();
+
+	// Check if something's entered
+	if (theName=="") {
+		alert("Please enter a city name.");
+		$("#search").focus();
+		return false;
+	}
+
 	// Remove "none" if it exists
 	if ($("#selectedCities li:eq(0)").text()=="None") {
 		$("#selectedCities li:eq(0)").remove();
 	}
 
 	// Add the city
-	var theName = $('#search').val();
-	if (theName=="") {
-		alert("Please enter a city name.");
-		$("#search").focus();
-		return false;
-	}
 	$("#selectedCities ul").append("<li>"+theName+" <button onclick='removeMe(this);' aria-label='remove "+theName+"'>X</button></li>");
 	$("#announce").text(theName + " added to list");
 	$("#search").val("");

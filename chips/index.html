@@ -53,12 +53,6 @@
 	margin: 0 auto;
 }
 
-#searchfield form input:focus,
-input:focus {
-	color: #000;
-	border: 2px solid #005499;
-}
-
 .autocomplete-suggestion {
 	margin: 0;
 	padding: .5rem;
@@ -75,6 +69,7 @@ input:focus {
 .visually-hidden {
 	position: absolute !important;
 	clip: rect(1px 1px 1px 1px);
+	white-space: nowrap;
 }
 
 #selectedCities {
@@ -104,7 +99,7 @@ button {
 	font-size: 1.1rem;
 }
 
-/* FOR DEMO LAYOUT/DISPLAY ONLY */
+/* FOR DEMO LAYOUT */
 * {
 	font-family: "Serif";
 }
@@ -151,6 +146,7 @@ button {
 	<ol>
 		<li>This pattern was created as an alternative design to the <a href="https://material.angular.io/components/chips/overview#selection">Angular Material Chips Autocomplete</a> pattern.</li>
 		<li>This pattern is based on the <a href="https://weboverhauls.github.io/demos/autosuggest/">autosuggest demo</a> (in the same repo).</li>
+		<li>As an experiment, here's a <a href="https://kindhearted-meal.glitch.me/">fork of this project implementing the HTML5 datalist element</a> for the dropdown. Unfortunately, <a href="https://a11ysupport.io/tests/tech__html__datalist">datalist has fairly poor accessibility support</a>. Both resources by Michael Fairchild (@mfairchild365).</li>
 	</ol>
 </div>
 

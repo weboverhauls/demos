@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Icon Fonts test page</title>
+
+     <meta name="description" content="Icon Fonts test page" />
+     <meta name="keywords" content="Icon,Fonts,test,webdev,html,css,test page" />
+     <meta name="author" content="Dennis Lembree" />
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link rel="stylesheet" href="icon-fonts.css" />
+
+<style>
+div {
+     margin: 2rem 0;
+}
+.icon {
+     font-size: 2rem;
+}
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+  <div>
+    <img src="images/question-circle.png" style="height:2.5rem; width:2.5rem;" alt="Help">
+  </div>
+
+  <div>
+    <span class="icon icon-question" role="img" aria-label="Help"></span>
+  </div>
+
+  <div>
+    <a href="help.html" class="icon icon-question" aria-label="Help"></a>
+  </div>
+
+  <div>
+    <span><span class="icon icon-question" aria-hidden="true"></span> Help</span>
+  </div>
+
+</div>
+
+</body>
+</html>

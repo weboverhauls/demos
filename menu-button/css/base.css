@@ -1,6 +1,7 @@
 
 body {
 margin:1em;
+font-size:1.1em;
 }
 footer {
 margin:2em 0;
@@ -20,7 +21,8 @@ font-size:1.15em;
 margin:1em 0 0;
 }
 p, li{
-margin:.5em 0;
+margin:1em 0;
+line-height: 1.35;
 }
 li{
 margin-left:1em;

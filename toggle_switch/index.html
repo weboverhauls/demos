@@ -77,8 +77,8 @@ body {
 
 <h1>Toggle Switch Example</h1>
 <form>
-	<p>Choose a type of account (keyboard users, please use arrow keys to select):</p>
-	<div class="toggle-btn-group">
+	<p><span id="grouplabel">Choose a type of account</span> (keyboard users, please use arrow keys to select):</p>
+	<div class="toggle-btn-group" role="radiogroup" aria-labelledby="grouplabel">
 		<input type="radio" id="checking" name="accountType" value="checking" class="accessAid" checked="checked" />
 		<label for="checking">Checking</label>
 

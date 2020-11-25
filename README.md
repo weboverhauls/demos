@@ -21,7 +21,7 @@ By Dennis Lembree @dennisl
 
 - [Hamburger/slide out menu](https://weboverhauls.github.io/demos/hamburger/)
 
-- Modal Dialog: [Example 1](https://weboverhauls.github.io/demos/modal/modal_demo.html) - [Example 2 (improved)](https://weboverhauls.github.io/demos/modal/modal_demo2.html)
+- [Modal Dialog](https://weboverhauls.github.io/demos/modal/modal_demo2.html)
 
 - [Pagination](https://weboverhauls.github.io/demos/pagination/)
 

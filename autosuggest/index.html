@@ -223,7 +223,7 @@ function doSearch  (event, locales, resultsLimit) {
           counter = counter + 1;
         }
       }
-      var number = [...document.getElementById("res").children].filter(child => child.getAttribute("role") === "option").length;
+      var number = document.getElementById("res") && document.getElementById("res").children && [...document.getElementById("res").children].filter(child => child.getAttribute("role") === "option").length;
       if (number >= 1) {
         var announcement = document.createTextNode(number + " suggestions displayed.  To navigate use up and down arrow keys.");
         document.getElementById("announce").appendChild(announcement);
@@ -238,7 +238,7 @@ function doSearch  (event, locales, resultsLimit) {
   }
   
  function doKeyPress (keys, event) {
-    var highlighted = document.getElementById("res") && [...document.getElementById("res").children].find(node => /highlight/.test(node.className));
+    var highlighted = document.getElementById("res") && document.getElementById("res").children && [...document.getElementById("res").children].find(node => /highlight/.test(node.className));
     
     switch (event.which) {
       case keys.ESC:

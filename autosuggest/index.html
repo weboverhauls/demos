@@ -213,8 +213,8 @@ function doSearch  (event, locales, resultsLimit) {
           removeAnnouncement();
           document.getElementById("search-autocomplete").style.display = "none";
           document.getElementById("search-combobox").setAttribute("aria-expanded", "false");
-          event.target.removeAttribute("aria-activedescendant");
-          event.target.focus();
+          document.getElementById("search").removeAttribute("aria-activedescendant");
+          document.getElementById("search").focus();
           counter = 1;
         });
       for (term in results) {
@@ -284,8 +284,8 @@ function doSearch  (event, locales, resultsLimit) {
   
 function moveUp (highlighted) {
     document.getElementById("search").removeAttribute("aria-activedescendant");
-    if (highlighted) {
-      current = highlighted;
+    current = highlighted;
+    if (current && current.previousElementSibling) {
       current.setAttribute('aria-selected', false);
       current.classList.remove('highlight');
       let prev = current.previousElementSibling;
@@ -293,6 +293,8 @@ function moveUp (highlighted) {
       prev && prev.classList.add('highlight');
       prev && document.getElementById("search").setAttribute("aria-activedescendant", prev.id);
     } else {
+      document.getElementById("res").firstChild.setAttribute("aria-selected", false);
+      document.getElementById("res").firstChild.classList.remove("highlight");
       current = document.getElementById("res").lastChild;
       current.classList.add("highlight");
       current.setAttribute("aria-selected", true);
@@ -302,9 +304,8 @@ function moveUp (highlighted) {
   
   function moveDown (highlighted) {
     document.getElementById("search").removeAttribute("aria-activedescendant");
-    
-    if (highlighted) {
-      current = highlighted;
+    current = highlighted;
+    if (current && current.nextElementSibling) {
       current.setAttribute('aria-selected', false);
       current.classList.remove("highlight");
     let next = current.nextElementSibling;
@@ -312,6 +313,8 @@ function moveUp (highlighted) {
     next && next.setAttribute('aria-selected', true);
     next && document.getElementById("search").setAttribute("aria-activedescendant", next.id);    
   } else {
+    document.getElementById("res").lastChild.setAttribute("aria-selected", false);
+    document.getElementById("res").lastChild.classList.remove("highlight");
     current = document.getElementById("res").firstChild;
     current.classList.add("highlight");
     current.setAttribute("aria-selected", true);

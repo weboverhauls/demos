@@ -171,6 +171,14 @@ function init() {
     UP: 38,
     DOWN: 40
   };
+  const combobox = document.getElementById("search-combobox");
+  combobox.setAttribute("role", "combobox");
+  combobox.setAttribute("aria-owns", "search");
+  combobox.setAttribute("aria-haspopup", "listbox");
+  combobox.setAttribute("aria-expanded", "false");
+  const search = document.getElementById("search");
+  search.setAttribute("aria-controls", "res");
+  search.setAttribute("aria-autocomplete", "list");
   document.getElementById("search").addEventListener('input', function (event) { doSearch(event, locales, resultsLimit) });
   document.getElementById("search").addEventListener("keydown", function(event) { doKeyPress(keys, event)});
 }
@@ -199,17 +207,16 @@ function doSearch  (event, locales, resultsLimit) {
         document.getElementById("search-autocomplete").append(res);
         document.getElementById("search-combobox").setAttribute("aria-expanded", true);
         counter = 1;
-      }
-      document.getElementById("res") && document.getElementById("res").addEventListener("click", function (event) {
-        document.getElementById("search").value = event.target.innerText;
-        document.getElementById("res").remove();
-        removeAnnouncement();
-        document.getElementById("search-autocomplete").style.display = "none";
-        document.getElementById("search-combobox").setAttribute("aria-expanded", "false");
-        event.target.removeAttribute("aria-activedescendant");
-        event.target.focus();
-        counter = 1;
-      });
+        document.getElementById("res").addEventListener("click", function (event) {
+          document.getElementById("search").value = event.target.innerText;
+          document.getElementById("res").remove();
+          removeAnnouncement();
+          document.getElementById("search-autocomplete").style.display = "none";
+          document.getElementById("search-combobox").setAttribute("aria-expanded", "false");
+          event.target.removeAttribute("aria-activedescendant");
+          event.target.focus();
+          counter = 1;
+        });
       for (term in results) {
         if (counter <= resultsLimit) {
           var item = document.createElement("li");
@@ -223,12 +230,13 @@ function doSearch  (event, locales, resultsLimit) {
           counter = counter + 1;
         }
       }
-      var number = document.getElementById("res") && document.getElementById("res").children && [...document.getElementById("res").children].filter(child => child.getAttribute("role") === "option").length;
+      var number = [...document.getElementById("res").children].filter(child => child.getAttribute("role") === "option").length;
       if (number >= 1) {
         var announcement = document.createTextNode(number + " suggestions displayed.  To navigate use up and down arrow keys.");
         document.getElementById("announce").appendChild(announcement);
       }
     }
+  }
   else {
     document.getElementById("res") && document.getElementById("res").remove();
     removeAnnouncement();
@@ -238,7 +246,8 @@ function doSearch  (event, locales, resultsLimit) {
   }
   
  function doKeyPress (keys, event) {
-    var highlighted = document.getElementById("res") && document.getElementById("res").children && [...document.getElementById("res").children].find(node => /highlight/.test(node.className));
+   if (!document.getElementById("res")) return;
+    var highlighted = document.getElementById("res") && [...document.getElementById("res").children].find(node => /highlight/.test(node.className));
     
     switch (event.which) {
       case keys.ESC:
@@ -246,7 +255,7 @@ function doSearch  (event, locales, resultsLimit) {
         event.target.removeAttribute("aria-activedescendant");
         document.getElementById("res") && document.getElementById("res").remove();
         removeAnnouncement();
-        document.getElementById("search-autocomplete").style.display = "block";
+        document.getElementById("search-autocomplete").style.display = "none";
         document.getElementById("search-combobox").setAttribute("aria-expanded", "false");
         break;
         

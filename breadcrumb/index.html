@@ -47,7 +47,7 @@ nav h2 {
 <h1>Accessible Breadcrumb Example</h1>
 
 <nav class="breadcrumbs" aria-labelledby="bread-head">
-	<h2 id="bread-head">You are here:</h2>
+	<h2 id="bread-head">You are on this page:</h2>
 	<ul class="items">
 		<li>
 			<a href="/">Home</a>
@@ -65,7 +65,7 @@ nav h2 {
 	<h2>Notes</h2>
 	<ul>
 		<li>Nav element used as container of breadcrumb content. This is subjective. And use of the Nav element may also depend on the number of other nav elements on page (could use section instead).</li>
-		<li>Visible "You are here" text is present and marked up as heading. The nav is labeled with this text via aria-labelledby.</li>
+		<li>Visible &quot;You are on this page&quot; text is present and marked up as heading. The nav is labeled with this text via aria-labelledby.</li>
 		<li>Providing the visual "You are here" text is subjective; aria-label could be implemented instead.</li>
 		<li>An unordered list is used for breadcrumb items. This is subjective; some folks argue that *ordered* list is appropriate but I disagree. Other folks say no list is needed at all (which I'm OK with).</li>
 		<li>Last item is not linked as it is the current page (and for visual affordance).</li>

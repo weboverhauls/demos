@@ -375,7 +375,7 @@ function addCity() {
 	}
 
 	// Add the city
-	$("#selectedCities ul").append("<li>"+theName+" <button onclick='removeMe(this);' aria-label='remove "+theName+"'>X</button></li>");
+	$("#selectedCities ul").append("<li>"+theName+" <button onclick='removeMe(this);' aria-label='X, remove "+theName+"'>X</button></li>");
 	$("#announce").text(theName + " added to list");
 	$("#search").val("");
 	return false;

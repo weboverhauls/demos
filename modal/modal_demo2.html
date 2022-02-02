@@ -21,7 +21,7 @@ p {
 	opacity: 0.8;
 }
 .modal {
-	position: fixed;
+/* 	position: fixed; */
 	width: 60%;
 	max-width: 650px;
 	min-width: 250px;
@@ -47,7 +47,7 @@ p {
 
 	<p>Example of an accessible modal with resizing and progressive enhancement.</p>
 	
-	<p><a href="#search" class="openModal">Go To Search</a></p>
+	<p><a href="#query" class="openModal">Go To Search</a></p>
 	
 	<p>Improvements/differences from original version:</p>
 	<ul>
@@ -90,7 +90,7 @@ p {
 // Initialize (these roles can confuse AT user if JS not running)
 $(".openModal").attr("role","button").attr("aria-haspopup","dialog");
 $(".modal").attr("role","dialog").attr("aria-modal","true");
-$(".modal").css("display","none");
+$(".modal").css("display","none").css("position","fixed");
 
 // Function to resize and reposition the modal window
 function resizeModal(id) {

@@ -17,7 +17,8 @@
 				firstItem;
 
 			// init - Add ARIA role and state
-			$tablist.attr('role', 'tablist');
+			$tablist.attr('role', 'tablist')
+				.attr('aria-labelledby','tablistName');
 
 			$tabs.attr('role', 'presentation');
 
